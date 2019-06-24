@@ -1,15 +1,15 @@
-FROM arm64v8/maven:slim
+FROM balenalib/raspberrypi3-debian:stretch-run
+
+COPY sources.list /etc/apt/sources.list
+COPY raspi.list /etc/apt/sources.list.d/raspi.list
 
 # Install OpenPnP
-RUN apt-get update && apt-get install -y git
+RUN apt-get update && apt-get install -y git maven
 RUN git clone https://github.com/openpnp/openpnp.git
 RUN cd openpnp && mvn -DskipTests install
 
 # Install desktop environment
-COPY sources.list /etc/apt/sources.list
-COPY raspi.list /etc/apt/sources.list.d/raspi.list
-
-RUN apt-get install xserver-xorg \
+RUN install_packages xserver-xorg \
     xinit lxsession desktop-file-utils \
     raspberrypi-ui-mods rpd-icons \
     gtk2-engines-clearlookspix \

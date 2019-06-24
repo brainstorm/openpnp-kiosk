@@ -4,9 +4,9 @@ COPY sources.list /etc/apt/sources.list
 COPY raspi.list /etc/apt/sources.list.d/raspi.list
 
 # Install OpenPnP
-RUN apt-get update && apt-get install -y git maven
-RUN git clone https://github.com/openpnp/openpnp.git
-RUN cd openpnp && mvn -DskipTests install
+# RUN apt-get update && apt-get install -y git maven openjdk-11
+# RUN git clone https://github.com/openpnp/openpnp.git
+# RUN cd openpnp && mvn -DskipTests install
 
 # Install desktop environment
 RUN install_packages xserver-xorg \

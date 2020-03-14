@@ -1,21 +1,21 @@
 FROM balenalib/raspberrypi3-64-debian-openjdk:latest
-#FROM sgtwilko/balenalib-rpi-raspbian-opencv:latest
 
+ENV JAVA_HOME /usr/lib/jvm/default-java/
 # Install desktop environment
-RUN apt-get update && install_packages xserver-xorg xinit xvfb
+RUN apt-get update && install_packages wget xserver-xorg xinit xvfb
 
 # Setting working directory
 WORKDIR /usr/src/app
 
 # Compile and install OpenCV (from https://linuxize.com/post/how-to-install-opencv-on-debian-10/)
 
-RUN install_packages build-essential cmake ant git pkg-config libgtk-3-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev     libxvidcore-dev libx264-dev libjpeg-dev libpng-dev libtiff-dev libatlas-base-dev python3-dev python3-numpy
+RUN install_packages build-essential cmake ant maven git pkg-config libgtk-3-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libjpeg-dev libpng-dev libtiff-dev libatlas-base-dev python3-dev python3-numpy
 
 RUN mkdir -p opencv_build
 WORKDIR /usr/src/app/opencv_build
 RUN git clone https://github.com/opencv/opencv && mkdir -p opencv/build
 RUN git clone https://github.com/opencv/opencv_contrib && mkdir -p opencv_contrib/build
-WORKDIR /usr/src/app/opencv_build/build
+WORKDIR /usr/src/app/opencv_build/opencv/build
 RUN cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D CMAKE_INSTALL_PREFIX=/usr/local \
     -D INSTALL_C_EXAMPLES=OFF \
@@ -27,7 +27,6 @@ RUN cmake -D CMAKE_BUILD_TYPE=RELEASE \
 
 
 # Install OpenPnP
-RUN install_packages git maven wget
 # Java headless might not cut it, install corretto-11 instead:
 # RUN wget https://corretto.aws/downloads/latest/amazon-corretto-11-aarch64-linux-jdk.deb && dpkg -i amazon-corretto-11-aarch64-linux-jdk.deb
 WORKDIR /usr/src/app

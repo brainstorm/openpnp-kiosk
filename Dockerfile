@@ -11,6 +11,7 @@ RUN apt-get update && install_packages xserver-xorg xinit xvfb
 WORKDIR /usr/src/app
 
 COPY start.sh start.sh
+RUN chmod -x start.sh
 
 # Adding things to autostart will cause them to be launchd automatically on starup
 #COPY autostart /etc/xdg/lxsession/LXDE-pi/autostart

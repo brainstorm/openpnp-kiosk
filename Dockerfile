@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 
 # Compile and install OpenCV (from https://linuxize.com/post/how-to-install-opencv-on-debian-10/)
 
-RUN install_packages build-essential cmake git pkg-config libgtk-3-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev     libxvidcore-dev libx264-dev libjpeg-dev libpng-dev libtiff-dev libatlas-base-dev python3-dev python3-numpy
+RUN install_packages build-essential cmake ant git pkg-config libgtk-3-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev     libxvidcore-dev libx264-dev libjpeg-dev libpng-dev libtiff-dev libatlas-base-dev python3-dev python3-numpy
 
 RUN mkdir -p opencv_build
 WORKDIR /usr/src/app/opencv_build
@@ -18,11 +18,12 @@ RUN git clone https://github.com/opencv/opencv_contrib && mkdir -p opencv_contri
 WORKDIR /usr/src/app/opencv_build/build
 RUN cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D CMAKE_INSTALL_PREFIX=/usr/local \
-    -D INSTALL_C_EXAMPLES=ON \
-    -D INSTALL_PYTHON_EXAMPLES=ON \
+    -D INSTALL_C_EXAMPLES=OFF \
+    -D INSTALL_PYTHON_EXAMPLES=OFF \
+    -D BUILD_JAVA=ON \
     -D OPENCV_GENERATE_PKGCONFIG=ON \
     -D OPENCV_EXTRA_MODULES_PATH=/usr/src/app/opencv_build/opencv_contrib/modules \
-    -D BUILD_EXAMPLES=ON .. && make install && pkg-config --modversion opencv4
+    -D BUILD_EXAMPLES=OFF .. && make install && pkg-config --modversion opencv4
 
 
 # Install OpenPnP

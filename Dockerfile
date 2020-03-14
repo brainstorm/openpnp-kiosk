@@ -1,7 +1,7 @@
 FROM balenalib/raspberrypi3-64-openjdk:bullseye-20200221
 
 # Install desktop environment and required openpnp deps
-RUN apt-get update && install_packages wget xserver-xorg xinit xvfb git wget libopencv4.2-java
+RUN apt-get update && install_packages wget xserver-xorg xinit xvfb git wget maven ant libopencv4.2-java
 
 # Setting working directory
 WORKDIR /usr/src/app

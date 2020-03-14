@@ -24,4 +24,4 @@ RUN git clone https://github.com/openpnp/openpnp.git
 RUN cd openpnp && mvn -DskipTests install && mkdir -p ~/.openpnp2
 COPY machine.xml ~/.openpnp2/machine.xml
 
-CMD ["bash", "-c", "/usr/src/app/start.sh"]
+CMD ["bash", "start.sh"]

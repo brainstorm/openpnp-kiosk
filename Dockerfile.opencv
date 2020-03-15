@@ -1,4 +1,4 @@
-FROM balenalib/raspberrypi3-64-openjdk:bullseye-20200221
+FROM balenalib/raspberrypi3-64-openjdk:11-bullseye
 
 # Install desktop environment and required openpnp deps
 RUN apt-get update && install_packages wget xserver-xorg xinit xvfb git wget libopencv4.2-java

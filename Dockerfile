@@ -10,7 +10,7 @@ WORKDIR /usr/src/app
 # Java headless might not cut it, install corretto-11 instead:
 # RUN wget https://corretto.aws/downloads/latest/amazon-corretto-11-aarch64-linux-jdk.deb && dpkg -i amazon-corretto-11-aarch64-linux-jdk.deb
 WORKDIR /usr/src/app
-RUN git clone https://github.com/openpnp/openpnp.git
+RUN git clone --depth 1 https://github.com/openpnp/openpnp.git
 RUN cd openpnp && mvn -DskipTests install && mkdir -p /root/.openpnp2
 
 # Copy relevant files

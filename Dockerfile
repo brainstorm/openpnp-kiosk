@@ -2,7 +2,7 @@ FROM balenalib/raspberrypi3-64:bullseye
 
 # Install desktop environment and required openpnp deps
 RUN apt-get update && install_packages wget xserver-xorg xinit xvfb git wget maven ant \
-                                       libjna-java libtiff5 libjpeg62-turbo libpng16-16 libpng-sixlegs-java libatlas3-base \
+                                       libjna-jni libtiff5 libjpeg62-turbo libpng16-16 libpng-sixlegs-java libatlas3-base \
                                        libgstreamer1.0-0 libgstreamer-plugins-base1.0-dev libgstreamer-gl1.0-0 \
                                        libgstreamer-plugins-bad1.0-0 libavcodec-extra58 libavformat58 libswscale5 \
                                        libv4l-0 libxvidcore4 libx264-155 \

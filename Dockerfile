@@ -1,10 +1,14 @@
-FROM balenalib/raspberrypi3-64-openjdk:bullseye-20200221
+FROM balenalib/raspberrypi3-64:bullseye
 
 # Install desktop environment and required openpnp deps
-RUN apt-get update && install_packages wget xserver-xorg xinit xvfb git wget maven ant
+RUN apt-get update && install_packages wget xserver-xorg xinit xvfb git wget maven ant libjna-java
 
 # Setting working directory
 WORKDIR /usr/src/app
+
+# Install Corretto, since OpenJDK seems to be only available as JRE in Debian bullseye for ARM64
+RUN wget https://corretto.aws/downloads/latest/amazon-corretto-11-aarch64-linux-jdk.deb && dpkg -i *.deb 
+ENV JAVA_HOME /usr/lib/jvm/java-11-amazon-corretto
 
 # Install OpenPnP
 WORKDIR /usr/src/app

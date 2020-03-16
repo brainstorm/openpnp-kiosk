@@ -10,8 +10,8 @@ If you wish to compile and generate binaries for OpenCV, [such as `libopencv_jav
 
 ## TODO
 
-(Cross-)Compile OpenCV 3.4.2 for ARM64 to avoid the following error message:
+Fix the following error message:
 
 ```
-15.03.20 01:28:41 (+0000)  main  2020-03-15 01:28:41.117 SystemLogger ERROR: java.lang.Exception: Error while reading machine.xml (/usr/src/app/libopencv_java342.so: /usr/src/app/libopencv_java342.so: wrong ELF class: ELFCLASS32 (Possible cause: architecture word width mismatch))
+2020-03-16 14:16:32.219 SystemLogger ERROR: Caused by: java.lang.UnsatisfiedLinkError: Native library (com/sun/jna/linux-aarch64/libjnidispatch.so) not found in resource path (/usr/src/app/openpnp/target/openpnp-gui-0.0.1-alpha-SNAPSHOT.jar)
 ```

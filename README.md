@@ -13,5 +13,5 @@ If you wish to compile and generate binaries for OpenCV, [such as `libopencv_jav
 Fix the following error message:
 
 ```
-16.03.20 14:50:13 (+0000)  main  2020-03-16 14:50:13.782 SystemLogger ERROR: Caused by: java.lang.UnsatisfiedLinkError: /usr/src/app/libopencv_java342.so: libtiff.so.5: cannot open shared object file: No such file or directory
+Caused by: java.lang.UnsatisfiedLinkError: Native library (com/sun/jna/linux-aarch64/libjnidispatch.so) not found in resource path (/usr/src/app/openpnp/target/openpnp-gui-0.0.1-alpha-SNAPSHOT.jar)
 ```

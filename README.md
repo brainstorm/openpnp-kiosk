@@ -10,8 +10,10 @@ If you wish to compile and generate binaries for OpenCV, [such as `libopencv_jav
 
 ## TODO
 
-Fix the following error message:
+Fix the following error issue: https://stackoverflow.com/questions/52500488/cant-obtain-static-method-fromnativemethod-object-from-class-com-sun-jna-nat
 
-```
-Caused by: java.lang.UnsatisfiedLinkError: Native library (com/sun/jna/linux-aarch64/libjnidispatch.so) not found in resource path (/usr/src/app/openpnp/target/openpnp-gui-0.0.1-alpha-SNAPSHOT.jar)
-```
+Specifically, I need to recompile and adjust the following repos for ARM64:
+
+https://github.com/openpnp/openpnp-capture
+
+https://github.com/openpnp/openpnp-capture-java

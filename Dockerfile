@@ -24,7 +24,8 @@ RUN git clone --depth 1 https://github.com/CCHS-Melbourne/openpnp.git
 RUN cd openpnp && mvn -DskipTests install && mkdir -p /root/.openpnp2
 
 # Copy relevant files and apply hacks
-COPY libopencv_java342.so /usr/src/app/libopencv_java342.so
+COPY objs/libopencv_java342.so /usr/src/app
+COPY objs/libopenpnp-capture.so /usr/src/app
 RUN ln -sf /usr/lib/aarch64-linux-gnu/jni/libjnidispatch.system.so /usr/lib/aarch64-linux-gnu/jni/libjnidispatch.so
 ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/usr/src/app:/usr/lib/aarch64-linux-gnu/jni
 COPY start.sh start.sh

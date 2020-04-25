@@ -36,7 +36,7 @@ RUN cmake \
 #    -D BUILD_DOCS=OFF \
 #    -D BUILD_FAT_JAVA_LIB=ON \
 #    -D BUILD_JAVA=ON \
-    -D OPENCV_ENABLE_NONFEE=ON \
+    -D OPENCV_ENABLE_NONFREE=ON \
     -D CMAKE_BUILD_TYPE=RELEASE \
     -D BUILD_SHARED_LIBS=OFF .. && make -j8 install && find . -name libopencv_*.so
 

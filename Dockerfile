@@ -3,7 +3,8 @@ FROM balenalib/raspberrypi3-64:bullseye
 # Install desktop environment...
 RUN apt-get update
 RUN install_packages wget curl git \
-					 xfce4 xserver-xorg-core xinit xauth dbus-x11 usbutils
+					 xserver-xorg-core xserver-xorg-input-all xinit xauth dbus-x11 usbutils \
+					 xfce4 xfce4-terminal
 
 # ...and required openpnp deps
 RUN install_packages maven ant \
@@ -37,8 +38,8 @@ RUN cd openpnp && mvn -DskipTests install && mkdir -p /root/.openpnp2
 # Copy relevant files and apply hacks
 COPY objs/libopencv_java342.so /usr/src/app
 COPY objs/libopenpnp-capture.so /usr/src/app
-COPY objs/openpnp-capture-java-0.0.19.jar openpnp/target/lib
 RUN rm openpnp/target/lib/openpnp-capture-java-0.0.17.jar
+COPY objs/openpnp-capture-java-0.0.17.jar openpnp/target/lib
 RUN ln -sf /usr/lib/aarch64-linux-gnu/jni/libjnidispatch.system.so /usr/lib/aarch64-linux-gnu/jni/libjnidispatch.so
 ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/usr/src/app:/usr/lib/aarch64-linux-gnu/jni
 ENV CLASSPATH $CLASSPATH:/usr/src/app
@@ -46,8 +47,8 @@ ENV CLASSPATH $CLASSPATH:/usr/src/app
 # Provision OpenPNP configuration, to be refined with more accessible remote provisioning
 RUN mkdir -p /root/.openpnp2 /root/.config
 COPY config/machine.xml /root/.openpnp2/machine.xml
-COPY config/parts.xml /root/.openpnp2/parts.xml
-COPY config/packages.xml /root/.openpnp2/packages.xml
+#COPY config/parts.xml /root/.openpnp2/parts.xml
+#COPY config/packages.xml /root/.openpnp2/packages.xml
 COPY config/xfce-autostart.cfg /root/.config/autostart
 
 # Prepare to start the kiosk

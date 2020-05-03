@@ -2,7 +2,8 @@ FROM balenalib/raspberrypi3-64:bullseye
 
 # Install desktop environment...
 RUN apt-get update
-RUN install_packages wget curl git xfce4
+RUN install_packages wget curl git \
+					 xfce4 xserver-xorg-core xinit xauth dbus-x11 usbutils
 
 # ...and required openpnp deps
 RUN install_packages maven ant \
@@ -15,7 +16,7 @@ RUN install_packages maven ant \
                      libmpfr6 libmpfi0
 
 # disable lxpolkit popup warning
-RUN mv /usr/bin/lxpolkit /usr/bin/lxpolkit.bak
+#RUN mv /usr/bin/lxpolkit /usr/bin/lxpolkit.bak
 
 RUN echo "#!/bin/bash" > /etc/X11/xinit/xserverrc \
   && echo "" >> /etc/X11/xinit/xserverrc \
@@ -43,15 +44,17 @@ ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/usr/src/app:/usr/lib/aarch64-linux-gnu/jni
 ENV CLASSPATH $CLASSPATH:/usr/src/app
 
 # Provision OpenPNP configuration, to be refined with more accessible remote provisioning
-RUN mkdir -p /root/.openpnp2
+RUN mkdir -p /root/.openpnp2 /root/.config
 COPY config/machine.xml /root/.openpnp2/machine.xml
 COPY config/parts.xml /root/.openpnp2/parts.xml
 COPY config/packages.xml /root/.openpnp2/packages.xml
+COPY config/xfce-autostart.cfg /root/.config/autostart
 
 # Prepare to start the kiosk
 COPY start.sh start.sh
 RUN chmod -x start.sh
 
+# Mouse/keyboard support
 ENV UDEV=1
 
 CMD ["bash", "start.sh"]

@@ -1,19 +1,18 @@
 FROM balenalib/raspberrypi3-64:bullseye
 
 # Install desktop environment...
-RUN apt-get update && install_packages xserver-xorg-core \
-    xinit xauth xterm aterm lxsession desktop-file-utils \
-    matchbox-keyboard
+RUN apt-get update
+RUN install_packages wget curl git xfce4
 
 # ...and required openpnp deps
-RUN install_packages wget xvfb git wget maven ant \
-                                       libjna-jni libtiff5 libjpeg62-turbo libpng16-16 libpng-sixlegs-java libatlas3-base \
-                                       libgstreamer1.0-0 libgstreamer-plugins-base1.0-dev libgstreamer-gl1.0-0 \
-                                       libgstreamer-plugins-bad1.0-0 libavcodec-extra58 libavformat58 libswscale5 \
-                                       libv4l-0 libxvidcore4 libx264-155 \
-                                       python3-numpy libopenblas0 libopenblas0-pthread libopenblas64-0 libopenblas64-0-pthread \
-                                       liblapack3 liblapack64-3 liblapacke liblapacke64 \
-                                       libmpfr6 libmpfi0
+RUN install_packages maven ant \
+                     libjna-jni libtiff5 libjpeg62-turbo libpng16-16 libpng-sixlegs-java libatlas3-base \
+                     libgstreamer1.0-0 libgstreamer-plugins-base1.0-dev libgstreamer-gl1.0-0 \
+                     libgstreamer-plugins-bad1.0-0 libavcodec-extra58 libavformat58 libswscale5 \
+                     libv4l-0 libxvidcore4 libx264-155 \
+                     python3-numpy libopenblas0 libopenblas0-pthread libopenblas64-0 libopenblas64-0-pthread \
+                     liblapack3 liblapack64-3 liblapacke liblapacke64 \
+                     libmpfr6 libmpfi0
 
 # disable lxpolkit popup warning
 RUN mv /usr/bin/lxpolkit /usr/bin/lxpolkit.bak

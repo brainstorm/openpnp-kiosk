@@ -3,5 +3,4 @@
 @xscreensaver -no-splash
 
 #xterm
-aterm
 #/usr/src/app/openpnp/openpnp.sh

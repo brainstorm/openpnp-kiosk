@@ -2,4 +2,6 @@
 @pcmanfm --desktop --profile LXDE-pi
 @xscreensaver -no-splash
 
-$HOME/openpnp/openpnp.sh
+#xterm
+aterm
+#/usr/src/app/openpnp/openpnp.sh

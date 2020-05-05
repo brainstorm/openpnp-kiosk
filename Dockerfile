@@ -27,13 +27,14 @@ RUN echo "#!/bin/bash" > /etc/X11/xinit/xserverrc \
 WORKDIR /usr/src/app
 
 # Install Corretto, since OpenJDK seems to be only available as JRE in Debian bullseye for ARM64
-RUN wget https://corretto.aws/downloads/latest/amazon-corretto-11-aarch64-linux-jdk.deb && dpkg -i *.deb 
+RUN wget https://corretto.aws/downloads/latest/amazon-corretto-11-aarch64-linux-jdk.deb \
+	&& dpkg -i *.deb && rm *.deb
 ENV JAVA_HOME /usr/lib/jvm/java-11-amazon-corretto
 
 # Install OpenPnP
 WORKDIR /usr/src/app
 RUN git clone --depth 1 https://github.com/CCHS-Melbourne/openpnp.git
-RUN cd openpnp && mvn -DskipTests install && mkdir -p /root/.openpnp2
+RUN cd openpnp && mvn -DskipTests install
 
 # Copy relevant files and apply hacks
 COPY objs/libopencv_java342.so /usr/src/app
@@ -48,9 +49,10 @@ ENV CLASSPATH $CLASSPATH:/usr/src/app
 # Provision OpenPNP configuration, to be refined with more accessible remote provisioning
 RUN mkdir -p /root/.openpnp2 /root/.config
 COPY config/machine.xml /root/.openpnp2/machine.xml
+## Those cannot be empty, otherwise OpenPnP crashes
 #COPY config/parts.xml /root/.openpnp2/parts.xml
 #COPY config/packages.xml /root/.openpnp2/packages.xml
-COPY config/xfce-autostart.cfg /root/.config/autostart
+COPY config/xfce-autostart.cfg /root/.config/autostart/openpnp.desktop
 
 # Prepare to start the kiosk
 COPY start.sh start.sh

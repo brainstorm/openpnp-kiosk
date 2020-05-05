@@ -4,18 +4,20 @@ FROM balenalib/raspberrypi3-64-openjdk:11-bullseye
 WORKDIR /usr/src/app
 
 # Compile and install JNA
-
 RUN install_packages build-essential cmake ant maven git wget pkg-config
 
-WORKDIR /usr/src/app
-RUN git clone --branch 4.1.0 --single-branch --depth 1 https://github.com/java-native-access/jna
-
 # Install Corretto, since OpenJDK seems to be only available as JRE in Debian bullseye for ARM64
+RUN wget https://corretto.aws/downloads/latest/amazon-corretto-8-aarch64-linux-jdk.deb && \
+    dpkg -i *.deb && rm *.deb
+#RUN wget https://corretto.aws/downloads/latest/amazon-corretto-11-aarch64-linux-jdk.deb && \
+#	 dpkg -i *.deb && rm *.deb
 #ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-arm64/
-RUN wget https://corretto.aws/downloads/latest/amazon-corretto-8-aarch64-linux-jdk.deb && dpkg -i *.deb && rm *.deb
-#RUN wget https://corretto.aws/downloads/latest/amazon-corretto-11-aarch64-linux-jdk.deb && dpkg -i *.deb && rm *.deb
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-amazon-corretto
 ENV ANT_HOME /usr/bin/ant
+
+# Clone JNA version 4.1.0, patch build.xml with aarch64 so that it generates libjnidispatch.so
+WORKDIR /usr/src/app
+RUN git clone --branch 4.1.0 --single-branch --depth 1 --recursive https://github.com/java-native-access/jna
 
 RUN cd jna && ant dist -DskipTests=true -Dmaven.javadoc.skip=true
 

@@ -40,7 +40,8 @@ COPY objs/libopencv_java342.so /usr/src/app
 COPY objs/libopenpnp-capture.so /usr/src/app
 RUN rm openpnp/target/lib/openpnp-capture-java-0.0.17.jar
 COPY objs/openpnp-capture-java-0.0.17.jar openpnp/target/lib
-RUN ln -sf /usr/lib/aarch64-linux-gnu/jni/libjnidispatch.system.so /usr/lib/aarch64-linux-gnu/jni/libjnidispatch.so
+COPY objs/libjnidispatch.so /usr/lib/aarch64-linux-gnu/jni/libjnidispatch.so
+#RUN ln -sf /usr/lib/aarch64-linux-gnu/jni/libjnidispatch.system.so /usr/lib/aarch64-linux-gnu/jni/libjnidispatch.so
 ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/usr/src/app:/usr/lib/aarch64-linux-gnu/jni
 ENV CLASSPATH $CLASSPATH:/usr/src/app
 

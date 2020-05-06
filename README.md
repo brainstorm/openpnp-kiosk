@@ -10,7 +10,11 @@ If you wish to compile and generate binaries for OpenCV, [such as `libopencv_jav
 
 ## TODO
 
-It works (application launches)! But as always there are some tweaks left to do:
+It works (application launches)! 
+
+![rpi3openpnp](img/first-raspberrypi3-success.png)
+
+But as always there are some tweaks left to do:
 
 * Make sure udev and USB docker container pass-through is stable for cameras and control board.
 * Upgrade to upstream's OpenCV 4.x, taking advantage of system's Debian packages and removing the custom-compiled `libopencv_java342.so`.

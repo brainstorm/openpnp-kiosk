@@ -9,7 +9,7 @@ The building is accomplished by bundling the dependencies and some library hacks
 To build locally before pushing to Balena cloud (or use it somewhere else):
 
 ```bash
-docker buildx build --platform linux/arm64 . -f Dockerfile
+docker buildx build --platform linux/arm64 . -f Dockerfile.raspberrypi3-64
 ```
 
 ## TODO

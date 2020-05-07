@@ -27,6 +27,7 @@ But as always there are some tweaks left to do:
 * Get PRs for [openpnp-capture-java](https://github.com/openpnp/openpnp-capture-java/pull/3) and [openpnp-capture](https://github.com/openpnp/openpnp-capture/pull/35) merged upstream.
 * Provision different machines, not just the LitePlacer.
 * Provision properly populated `parts.xml` and `packages.xml`. Come up with a better provisioning mechanism than updating those two files periodically.
+* Find testers for the (untested yet) Jetson Nano Dockerfile.
 * Make Java UI style more modern looking-like, the default awt look is horrible :P
 
 [gcloud_iot]: https://cloud.google.com/solutions/iot

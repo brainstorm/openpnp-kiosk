@@ -8,7 +8,7 @@ So, how do I get this to work on my Raspberry Pi 4 or Jetson nano quick?
 
 [First, follow steps 1 to 4 on balena.io][quickstart].. instead of balena-dash use this openpnp-kiosk repository (the one you are reading this README.md from).
 
-[When those steps are completed, deploy the openpnp-kiosk "app" using the Balena CLI tools][software-deploy].
+[When those steps are completed, deploy the openpnp-kiosk "app" using the Balena CLI tools][software_deploy].
 
 # How does this work?
 

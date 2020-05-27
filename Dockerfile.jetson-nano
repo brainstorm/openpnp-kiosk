@@ -1,4 +1,4 @@
-FROM alwaysai/edgeiq:nano-0.11.0
+FROM alwaysai/edgeiq:nano-latest
 
 ENV DEBIAN_FRONTEND noninteractive
 

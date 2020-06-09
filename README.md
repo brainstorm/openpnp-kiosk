@@ -30,7 +30,7 @@ Alternatively, you can just install the software on the RPi itself running the c
 
 It works! 
 
-![rpi3openpnp](img/first-raspberrypi3-success.png)
+![rpi3openpnp](img/rpi3_embedded_display.jpg)
 
 But as always there are some tweaks left to do:
 

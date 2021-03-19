@@ -1,6 +1,6 @@
 # OpenPnP kiosk 
 
-This repository deploys [OpenPnP](https://github.com/openpnp) software automatically on an `aarch64` compatible hardware, **currently targetting rpi3, rpi4 and Jetson Nano SBCs**.
+This repository deploys [OpenPnP](https://github.com/openpnp) software automatically on an `aarch64` compatible hardware, **currently targetting rpi3, rpi4 and Jetson Nano <acronym title="Single Board Computer">SBCs</acronym>**.
 
 # Quickstart
 
@@ -24,6 +24,12 @@ Great! You want to add some tweaks to this project? To build locally before push
 docker buildx build --platform linux/arm64 . -f Dockerfile.raspberrypi3-64
 ```
 
+To push new Dockerfile changes to balena, i.e for Jetson Nano SBC:
+
+```
+balena push --dockerfile Dockerfile.jetson.nano
+```
+
 Alternatively, you can just install the software on the RPi itself running the commands found in the Dockerfile itself, no cloud nor docker involved ;)
 
 ## TODO
@@ -31,6 +37,7 @@ Alternatively, you can just install the software on the RPi itself running the c
 It works! 
 
 ![rpi3openpnp](img/rpi3_embedded_display.jpg)
+![rpi3openpnpbigmon](img/first-raspberrypi3-success.png)
 
 But as always there are some tweaks left to do:
 

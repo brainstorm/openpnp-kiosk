@@ -4,6 +4,7 @@ rm /tmp/.X0-lock &>/dev/null || true
 
 export DISPLAY=:0
 export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
+export UDEV=1
 
 # USB mouse/keyboard not responding on container: https://forums.balena.io/t/x11-hotplug-usb/7250/30
 if which udevadm > /dev/null; then

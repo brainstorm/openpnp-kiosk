@@ -34,13 +34,6 @@ ENV JAVA_HOME /usr/lib/jvm/java-11-amazon-corretto
 # Install Java and OpenPnP
 RUN dpkg -i *.deb && rm *.deb
 
-# Provision OpenPNP configuration, to be refined with more accessible remote provisioning
-RUN mkdir -p /root/.openpnp2 /root/.config
-COPY config/machine.xml /root/.openpnp2/machine.xml
-## Those cannot be empty, otherwise OpenPnP crashes
-#COPY config/parts.xml /root/.openpnp2/parts.xml
-#COPY config/packages.xml /root/.openpnp2/packages.xml
-
 # Prepare to start the kiosk
 COPY start.sh start.sh
 RUN chmod -x start.sh

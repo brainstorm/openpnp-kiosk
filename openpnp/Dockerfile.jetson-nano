@@ -41,7 +41,7 @@ RUN chmod -x start.sh
 # Provision OpenPNP configuration, to be refined with more machines and configs
 RUN mkdir -p /root/.openpnp2 /root/.config && cd /root/.openpnp2 && wget https://raw.githubusercontent.com/CCHS-Melbourne/openpnp-kiosk/master/config/machine.xml && \
 								    ## Those cannot be empty, otherwise OpenPnP crashes
-					      			    wget https://raw.githubusercontent.com/cchs-melbourne/openpnp-kiosk/master/config/parts.xml
+					      			    wget https://raw.githubusercontent.com/cchs-melbourne/openpnp-kiosk/master/config/parts.xml \
 					      			    wget https://raw.githubusercontent.com/cchs-melbourne/openpnp-kiosk/master/config/packages.xml
 
 CMD ["bash", "start.sh"]

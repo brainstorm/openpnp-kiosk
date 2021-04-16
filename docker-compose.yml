@@ -7,5 +7,5 @@ services:
     network_mode: "host"
     labels:
       io.balena.features.kernel-modules: '1'
-volumes:
-  - config:/root/.openpnp2
+    volumes:
+      - ./config:/root/.openpnp2

@@ -1,7 +1,7 @@
 version: '2'
 services:
-  balena-cam:
-    build: ./balena-cam
+  openpnp:
+    build: ./openpnp
     privileged: true
     restart: always
     network_mode: "host"

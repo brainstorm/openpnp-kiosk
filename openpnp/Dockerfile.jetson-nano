@@ -1,4 +1,4 @@
-FROM alwaysai/edgeiq-dev:nano-latest
+FROM alwaysai/edgeiq-dev:jetson-latest
 
 ENV DEBIAN_FRONTEND noninteractive
 # Mouse/keyboard support

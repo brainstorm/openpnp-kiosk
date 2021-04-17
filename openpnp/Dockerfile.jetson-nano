@@ -39,6 +39,7 @@ RUN wget https://raw.githubusercontent.com/cchs-melbourne/openpnp-kiosk/master/s
 
 # Provision OpenPNP configuration, to be refined with more machines and configs
 RUN mkdir -p /root/.openpnp2 /root/.config && cd /root/.openpnp2 && wget https://raw.githubusercontent.com/CCHS-Melbourne/openpnp-kiosk/master/config/machine.xml && \
-					      			    touch parts.xml && touch packages.xml
+					      			    touch parts.xml && touch packages.xml \
+wget https://raw.githubusercontent.com/CCHS-Melbourne/openpnp-kiosk/master/config/udev-dockerfriendly.sh -O /etc/init.d/udev
 
 CMD ["bash", "start.sh"]

@@ -1,240 +1,120 @@
 <openpnp-machine>
-   <machine class="org.openpnp.machine.reference.ReferenceMachine" speed="1.0">
+   <machine class="org.openpnp.machine.reference.ReferenceMachine" speed="1.0" auto-tool-select="true">
+      <axes>
+         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS1650881a8eb5581a" name="x" type="X" driver-id="DRV166208a07d8ab5cf" letter="X" backlash-compensation-method="DirectionalCompensation" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="true" soft-limit-high-enabled="true" safe-zone-low-enabled="true" safe-zone-high-enabled="true">
+            <home-coordinate value="0.0" units="Millimeters"/>
+            <backlash-offset value="-0.3" units="Millimeters"/>
+            <soft-limit-low value="-0.3" units="Millimeters"/>
+            <soft-limit-high value="574.0" units="Millimeters"/>
+            <safe-zone-low value="-0.3" units="Millimeters"/>
+            <safe-zone-high value="574.0" units="Millimeters"/>
+            <feedrate-per-second value="350.0" units="Millimeters"/>
+            <acceleration-per-second-2 value="1500.0" units="Millimeters"/>
+            <jerk-per-second-3 value="0.0" units="Millimeters"/>
+            <resolution>1.0E-4</resolution>
+         </axis>
+         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS1650881a8edee6a3" name="y" type="Y" driver-id="DRV166208a07d8ab5cf" letter="Y" backlash-compensation-method="DirectionalCompensation" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="true" soft-limit-high-enabled="true" safe-zone-low-enabled="true" safe-zone-high-enabled="true">
+            <home-coordinate value="0.0" units="Millimeters"/>
+            <backlash-offset value="-0.3" units="Millimeters"/>
+            <soft-limit-low value="-0.3" units="Millimeters"/>
+            <soft-limit-high value="340.0" units="Millimeters"/>
+            <safe-zone-low value="-0.3" units="Millimeters"/>
+            <safe-zone-high value="340.0" units="Millimeters"/>
+            <feedrate-per-second value="350.0" units="Millimeters"/>
+            <acceleration-per-second-2 value="1500.0" units="Millimeters"/>
+            <jerk-per-second-3 value="0.0" units="Millimeters"/>
+            <resolution>1.0E-4</resolution>
+         </axis>
+         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS1650881a8ee18a87" name="z" type="Z" driver-id="DRV166208a07d8ab5cf" letter="Z" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="true" soft-limit-high-enabled="true" safe-zone-low-enabled="true" safe-zone-high-enabled="true">
+            <home-coordinate value="0.0" units="Millimeters"/>
+            <backlash-offset value="0.0" units="Millimeters"/>
+            <soft-limit-low value="-31.8" units="Millimeters"/>
+            <soft-limit-high value="1.0" units="Millimeters"/>
+            <safe-zone-low value="-10.0" units="Millimeters"/>
+            <safe-zone-high value="0.0" units="Millimeters"/>
+            <feedrate-per-second value="300.0" units="Millimeters"/>
+            <acceleration-per-second-2 value="600.0" units="Millimeters"/>
+            <jerk-per-second-3 value="0.0" units="Millimeters"/>
+            <resolution>1.0E-4</resolution>
+         </axis>
+         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS1650881a8f6b1746" name="rotation" type="Rotation" driver-id="DRV166208a07d8ab5cf" letter="A" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="true" wrap-around-rotation="true" invert-linear-rotational="false" soft-limit-low-enabled="false" soft-limit-high-enabled="false" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
+            <home-coordinate value="0.0" units="Millimeters"/>
+            <backlash-offset value="0.0" units="Millimeters"/>
+            <soft-limit-low value="0.0" units="Millimeters"/>
+            <soft-limit-high value="0.0" units="Millimeters"/>
+            <safe-zone-low value="0.0" units="Millimeters"/>
+            <safe-zone-high value="0.0" units="Millimeters"/>
+            <feedrate-per-second value="1666.6666666666667" units="Millimeters"/>
+            <acceleration-per-second-2 value="3333.3333333333335" units="Millimeters"/>
+            <jerk-per-second-3 value="0.0" units="Millimeters"/>
+            <resolution>1.0E-4</resolution>
+         </axis>
+      </axes>
       <heads>
-         <head class="org.openpnp.machine.reference.ReferenceHead" id="H1" name="H1">
+         <head class="org.openpnp.machine.reference.ReferenceHead" id="H1" name="H1" visual-homing-method="None" nozzle-solutions-multiplier="1">
             <nozzles>
-               <nozzle class="org.openpnp.machine.reference.ReferenceNozzle" id="N1" name="N1" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" changer-enabled="false" limit-rotation="true">
+               <nozzle class="org.openpnp.machine.reference.ReferenceNozzle" axis-X-id="AXS1650881a8eb5581a" axis-Y-id="AXS1650881a8edee6a3" axis-Z-id="AXS1650881a8ee18a87" axis-rotation-id="AXS1650881a8f6b1746" id="N1" name="N1" pick-dwell-milliseconds="0" place-dwell-milliseconds="1000" current-nozzle-tip-id="NT1" changer-enabled="false" nozzle-tip-changed-on-manual-feed="false" enable-dynamic-safe-z="false" version="200" limit-rotation="true">
                   <compatible-nozzle-tip-ids class="java.util.ArrayList">
                      <string>NT1</string>
                   </compatible-nozzle-tip-ids>
-                  <head-offsets units="Millimeters" x="-81.3" y="-21.599999999999966" z="42.0" rotation="0.6654105176663734"/>
-                  <safe-z value="36.0" units="Millimeters"/>
+                  <head-offsets units="Millimeters" x="-81.5" y="-22.99" z="0.0" rotation="0.0"/>
+                  <manual-nozzle-tip-change-location units="Millimeters" x="-8.8" y="305.1" z="0.5" rotation="0.0"/>
+                  <vacuum-sense-actuator-name>SOLENOID</vacuum-sense-actuator-name>
+                  <vacuum-actuator-name>N1:SOLENOID</vacuum-actuator-name>
                </nozzle>
             </nozzles>
             <actuators>
-               <actuator class="org.openpnp.machine.reference.ReferenceActuator" id="A1" name="A1" index="0">
+               <actuator class="org.openpnp.machine.reference.ReferenceActuator" id="ACT166ef1f3c8e8bea5" name="N1:SOLENOID" value-type="Boolean" value-type-confirmed="false" default-on-double="0.0" default-on-string="" default-off-double="0.0" default-off-string="" interlock-actuator="false" driver-id="DRV166208a07d8ab5cf" coordinated-before-actuate="true" coordinated-after-actuate="false" coordinated-before-read="true" enabled-actuation="AssumeUnknown" homed-actuation="LeaveAsIs" disabled-actuation="LeaveAsIs" index="0">
                   <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-                  <safe-z value="0.0" units="Millimeters"/>
+               </actuator>
+               <actuator class="org.openpnp.machine.reference.ReferenceActuator" id="ACT166ef209918713f3" name="N1:PUMP" value-type="Boolean" value-type-confirmed="false" default-on-double="0.0" default-on-string="" default-off-double="0.0" default-off-string="" interlock-actuator="false" driver-id="DRV166208a07d8ab5cf" coordinated-before-actuate="true" coordinated-after-actuate="false" coordinated-before-read="true" enabled-actuation="AssumeUnknown" homed-actuation="LeaveAsIs" disabled-actuation="LeaveAsIs" index="0">
+                  <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                </actuator>
             </actuators>
             <cameras>
-               <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" id="CAM1581330207457" name="up" looking="Down" settle-time-ms="250" rotation="0.0" flip-x="false" flip-y="false" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" unique-id="USB 2.0 PC Cam \\?\usb#vid_5149&amp;pid_13d3&amp;mi_00#7&amp;2c16df1c&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0" fps="30.0">
-                  <units-per-pixel units="Millimeters" x="0.0414938" y="0.0411523" z="0.0" rotation="0.0"/>
+               <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" axis-X-id="AXS1650881a8eb5581a" axis-Y-id="AXS1650881a8edee6a3" id="CAM166d69a3bb6fa745" name="headcam" looking="Down" auto-visible="true" shown-in-multi-camera-view="true" before-capture-light-on="true" user-action-light-on="true" after-capture-light-off="false" anti-glare-light-off="true" enable-units-per-pixel-3-d="false" auto-view-plane-z="false" settle-method="FixedTime" settle-time-ms="250" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" fps="5.0" suspend-preview-in-tasks="true" capture-try-count="4" capture-try-timeout-ms="2000" rotation="0.0" flip-x="false" flip-y="false" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" allow-machine-actuators="false" focus-sensing-method="None" unique-id="USB 2.0 PC Cam \\?\usb#vid_5149&amp;pid_13d3&amp;mi_00#8&amp;13e1e53d&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0">
+                  <units-per-pixel units="Millimeters" x="0.07604563" y="0.07518797" z="0.0" rotation="0.0"/>
                   <vision-provider class="org.openpnp.machine.reference.vision.OpenCvVisionProvider"/>
                   <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-                  <safe-z value="0.0" units="Millimeters"/>
                   <calibration enabled="false">
-                     <camera-matrix length="9">8.025480386E-315, 8.02564493E-315, 8.029004606E-315, -5.41508287547E-312, 8.025480396E-315, 8.02564495E-315, 8.02900524E-315, -5.41508287548E-312, 8.025480406E-315</camera-matrix>
-                     <distortion-coefficients length="5">0.0, -5.415109137475E-312, 8.0261287E-315, 8.026223634E-315, 0.0</distortion-coefficients>
+                     <camera-matrix length="9">0.0, 0.0, 4.9E-324, 0.0, 0.0, 4.9E-324, 1.5E-323, 3.881988644547E-311, 1.646884E-318</camera-matrix>
+                     <distortion-coefficients length="5">0.0, 0.0, 0.0, 0.0, 1.9934401931586978E-307</distortion-coefficients>
                   </calibration>
+                  <focus-provider class="org.openpnp.machine.reference.camera.AutoFocusProvider" averaged-frames="1" focus-speed="0.5" show-diagnostics="true">
+                     <focal-resolution value="0.05" units="Millimeters"/>
+                  </focus-provider>
                   <back-light-compensation property="BackLightCompensation" value="0" auto="false"/>
-                  <brightness property="Brightness" value="114" auto="false"/>
-                  <contrast property="Contrast" value="84" auto="false"/>
+                  <brightness property="Brightness" value="151" auto="false"/>
+                  <contrast property="Contrast" value="99" auto="false"/>
                   <exposure property="Exposure"/>
-                  <focus property="Focus" value="0" auto="false"/>
+                  <focus property="Focus"/>
                   <gain property="Gain"/>
-                  <gamma property="Gamma" value="5" auto="false"/>
+                  <gamma property="Gamma" value="3" auto="false"/>
                   <hue property="Hue" value="0" auto="false"/>
                   <power-line-frequency property="PowerLineFrequency" value="1" auto="false"/>
-                  <saturation property="Saturation" value="38" auto="false"/>
-                  <sharpness property="Sharpness" value="2" auto="false"/>
-                  <white-balance property="WhiteBalance" value="6500" auto="true"/>
+                  <saturation property="Saturation" value="27" auto="false"/>
+                  <sharpness property="Sharpness" value="4" auto="false"/>
+                  <white-balance property="WhiteBalance" value="4948" auto="false"/>
                   <zoom property="Zoom"/>
                </camera>
             </cameras>
-            <park-location units="Millimeters" x="0.0" y="370.0" z="0.0" rotation="0.0"/>
-            <soft-limits-enabled>false</soft-limits-enabled>
-            <min-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <max-location units="Millimeters" x="568.0" y="370.0" z="0.0" rotation="0.0"/>
+            <park-location units="Millimeters" x="20.0" y="20.0" z="0.0" rotation="0.0"/>
+            <soft-limits-enabled>true</soft-limits-enabled>
+            <pump-actuator-name>N1:SOLENOID</pump-actuator-name>
+            <homing-fiducial-location units="Millimeters" x="-9.8" y="9.9" z="0.0" rotation="0.0"/>
          </head>
       </heads>
       <signalers/>
       <feeders>
-         <feeder class="org.openpnp.machine.reference.feeder.ReferenceStripFeeder" id="F5" name="Upper Strips - 1" enabled="true" part-id="R0805-1K" retry-count="3" pick-retry-count="3" tape-type="WhitePaper" vision-enabled="true" feed-count="0">
+         <feeder class="org.openpnp.machine.reference.feeder.ReferenceStripFeeder" version="1.1" id="F5" name="stripe 1" enabled="true" part-id="R0805-1K" retry-count="3" feed-retry-count="3" pick-retry-count="0" tape-type="WhitePaper" vision-enabled="true" feed-count="0" max-feed-count="0">
             <location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <reference-hole-location units="Millimeters" x="398.821" y="68.399" z="0.0" rotation="0.0"/>
-            <last-hole-location units="Millimeters" x="398.888" y="64.298" z="0.0" rotation="0.0"/>
+            <reference-hole-location units="Millimeters" x="307.7818242976769" y="248.23285668537252" z="-30.0" rotation="0.0"/>
+            <last-hole-location units="Millimeters" x="307.6459709328113" y="244.31664216165922" z="-30.0" rotation="0.0"/>
             <part-pitch value="4.0" units="Millimeters"/>
             <tape-width value="8.0" units="Millimeters"/>
             <pipeline>
                <stages>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="original" enabled="true" settle-first="true" count="1"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="cleanup-original" enabled="true" kernel-size="5"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="gray" enabled="true" conversion="Bgr2Gray"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DetectEdgesCanny" name="find-edges" enabled="true" threshold-1="5.0" threshold-2="15.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="predetect-1" enabled="false" kernel-size="5"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="predetect-2" enabled="false" kernel-size="7"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DetectFixedCirclesHough" name="results" enabled="true" dp="1.0" param-1="25.0" param-2="20.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="recalled" enabled="true" image-stage-name="original"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawCircles" name="display" enabled="true" circles-stage-name="results" thickness="1">
-                     <color r="255" g="0" b="0" a="255"/>
-                  </cv-stage>
-               </stages>
-            </pipeline>
-         </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.ReferenceStripFeeder" id="F6" name="Upper Strips - 2" enabled="true" part-id="R0805-1K" retry-count="3" pick-retry-count="3" tape-type="WhitePaper" vision-enabled="true" feed-count="0">
-            <location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <reference-hole-location units="Millimeters" x="155.055" y="87.275" z="0.0" rotation="0.0"/>
-            <last-hole-location units="Millimeters" x="154.713" y="83.314" z="0.0" rotation="0.0"/>
-            <part-pitch value="4.0" units="Millimeters"/>
-            <tape-width value="8.0" units="Millimeters"/>
-            <pipeline>
-               <stages>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="original" enabled="true" settle-first="true" count="1"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="cleanup-original" enabled="true" kernel-size="5"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="gray" enabled="true" conversion="Bgr2Gray"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DetectEdgesCanny" name="find-edges" enabled="true" threshold-1="5.0" threshold-2="15.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="predetect-1" enabled="true" kernel-size="5"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="predetect-2" enabled="false" kernel-size="7"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DetectFixedCirclesHough" name="results" enabled="true" dp="1.0" param-1="25.0" param-2="20.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="recalled" enabled="true" image-stage-name="original"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawCircles" name="display" enabled="true" circles-stage-name="results" thickness="1">
-                     <color r="255" g="0" b="0" a="255"/>
-                  </cv-stage>
-               </stages>
-            </pipeline>
-         </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.ReferenceStripFeeder" id="F7" name="Upper Strips - 3" enabled="true" part-id="R0805-1K" retry-count="3" pick-retry-count="3" tape-type="WhitePaper" vision-enabled="true" feed-count="0">
-            <location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <reference-hole-location units="Millimeters" x="172.679" y="56.242" z="0.0" rotation="0.0"/>
-            <last-hole-location units="Millimeters" x="172.251" y="60.289" z="0.0" rotation="0.0"/>
-            <part-pitch value="4.0" units="Millimeters"/>
-            <tape-width value="8.0" units="Millimeters"/>
-            <pipeline>
-               <stages>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="original" enabled="true" settle-first="true" count="1"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="cleanup-original" enabled="true" kernel-size="5"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="gray" enabled="true" conversion="Bgr2Gray"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DetectEdgesCanny" name="find-edges" enabled="true" threshold-1="5.0" threshold-2="15.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="predetect-1" enabled="true" kernel-size="5"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="predetect-2" enabled="false" kernel-size="7"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DetectFixedCirclesHough" name="results" enabled="true" dp="1.0" param-1="25.0" param-2="20.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="recalled" enabled="true" image-stage-name="original"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawCircles" name="display" enabled="true" circles-stage-name="results" thickness="1">
-                     <color r="255" g="0" b="0" a="255"/>
-                  </cv-stage>
-               </stages>
-            </pipeline>
-         </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.ReferenceStripFeeder" id="F8" name="Upper Strips - 4" enabled="true" part-id="R0805-1K" retry-count="3" pick-retry-count="3" tape-type="WhitePaper" vision-enabled="true" feed-count="0">
-            <location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <reference-hole-location units="Millimeters" x="184.199" y="55.074" z="0.0" rotation="0.0"/>
-            <last-hole-location units="Millimeters" x="184.456" y="59.035" z="0.0" rotation="0.0"/>
-            <part-pitch value="4.0" units="Millimeters"/>
-            <tape-width value="8.0" units="Millimeters"/>
-            <pipeline>
-               <stages>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="original" enabled="true" settle-first="true" count="1"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="cleanup-original" enabled="true" kernel-size="5"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="gray" enabled="true" conversion="Bgr2Gray"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DetectEdgesCanny" name="find-edges" enabled="true" threshold-1="5.0" threshold-2="15.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="predetect-1" enabled="true" kernel-size="5"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="predetect-2" enabled="false" kernel-size="7"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DetectFixedCirclesHough" name="results" enabled="true" dp="1.0" param-1="25.0" param-2="20.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="recalled" enabled="true" image-stage-name="original"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawCircles" name="display" enabled="true" circles-stage-name="results" thickness="1">
-                     <color r="255" g="0" b="0" a="255"/>
-                  </cv-stage>
-               </stages>
-            </pipeline>
-         </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.ReferenceStripFeeder" id="F1" name="Lower Strips - 1" enabled="true" part-id="R0805-1K" retry-count="3" pick-retry-count="3" tape-type="WhitePaper" vision-enabled="true" feed-count="0">
-            <location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <reference-hole-location units="Millimeters" x="147.347" y="40.285" z="0.0" rotation="0.0"/>
-            <last-hole-location units="Millimeters" x="147.433" y="36.238" z="0.0" rotation="0.0"/>
-            <part-pitch value="4.0" units="Millimeters"/>
-            <tape-width value="8.0" units="Millimeters"/>
-            <pipeline>
-               <stages>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="original" enabled="true" settle-first="true" count="1"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="cleanup-original" enabled="true" kernel-size="5"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="gray" enabled="true" conversion="Bgr2Gray"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DetectEdgesCanny" name="find-edges" enabled="true" threshold-1="5.0" threshold-2="15.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="predetect-1" enabled="true" kernel-size="5"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="predetect-2" enabled="false" kernel-size="7"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DetectFixedCirclesHough" name="results" enabled="true" dp="1.0" param-1="25.0" param-2="20.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="recalled" enabled="true" image-stage-name="original"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawCircles" name="display" enabled="true" circles-stage-name="results" thickness="1">
-                     <color r="255" g="0" b="0" a="255"/>
-                  </cv-stage>
-               </stages>
-            </pipeline>
-         </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.ReferenceStripFeeder" id="F2" name="Lower Strips - 2" enabled="true" part-id="R0603-1K" retry-count="3" pick-retry-count="3" tape-type="WhitePaper" vision-enabled="true" feed-count="3">
-            <location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <reference-hole-location units="Millimeters" x="157.385" y="40.199" z="0.0" rotation="0.0"/>
-            <last-hole-location units="Millimeters" x="157.328" y="36.267" z="0.0" rotation="0.0"/>
-            <part-pitch value="4.0" units="Millimeters"/>
-            <tape-width value="8.0" units="Millimeters"/>
-            <pipeline>
-               <stages>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="original" enabled="true" settle-first="true" count="1"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="cleanup-original" enabled="true" kernel-size="5"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="gray" enabled="true" conversion="Bgr2Gray"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DetectEdgesCanny" name="find-edges" enabled="true" threshold-1="5.0" threshold-2="15.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="predetect-1" enabled="true" kernel-size="5"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="predetect-2" enabled="false" kernel-size="7"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DetectFixedCirclesHough" name="results" enabled="true" dp="1.0" param-1="25.0" param-2="20.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="recalled" enabled="true" image-stage-name="original"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawCircles" name="display" enabled="true" circles-stage-name="results" thickness="1">
-                     <color r="255" g="0" b="0" a="255"/>
-                  </cv-stage>
-               </stages>
-            </pipeline>
-         </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.ReferenceStripFeeder" id="F3" name="Lower Strips - 3" enabled="true" part-id="R0402-1K" retry-count="3" pick-retry-count="3" tape-type="WhitePaper" vision-enabled="true" feed-count="1">
-            <location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <reference-hole-location units="Millimeters" x="167.366" y="40.256" z="0.0" rotation="0.0"/>
-            <last-hole-location units="Millimeters" x="167.366" y="36.295" z="0.0" rotation="0.0"/>
-            <part-pitch value="2.0" units="Millimeters"/>
-            <tape-width value="8.0" units="Millimeters"/>
-            <pipeline>
-               <stages>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="original" enabled="true" settle-first="true" count="1"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="cleanup-original" enabled="true" kernel-size="5"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="gray" enabled="true" conversion="Bgr2Gray"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DetectEdgesCanny" name="find-edges" enabled="true" threshold-1="5.0" threshold-2="15.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="predetect-1" enabled="true" kernel-size="5"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="predetect-2" enabled="false" kernel-size="7"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DetectFixedCirclesHough" name="results" enabled="true" dp="1.0" param-1="25.0" param-2="20.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="recalled" enabled="true" image-stage-name="original"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawCircles" name="display" enabled="true" circles-stage-name="results" thickness="1">
-                     <color r="255" g="0" b="0" a="255"/>
-                  </cv-stage>
-               </stages>
-            </pipeline>
-         </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.ReferenceStripFeeder" id="F4" name="Lower Strips - 4" enabled="true" part-id="R0201-1K" retry-count="3" pick-retry-count="3" tape-type="WhitePaper" vision-enabled="true" feed-count="2">
-            <location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <reference-hole-location units="Millimeters" x="177.404" y="40.256" z="0.0" rotation="0.0"/>
-            <last-hole-location units="Millimeters" x="177.376" y="36.267" z="0.0" rotation="0.0"/>
-            <part-pitch value="2.0" units="Millimeters"/>
-            <tape-width value="8.0" units="Millimeters"/>
-            <pipeline>
-               <stages>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="original" enabled="true" settle-first="true" count="1"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="cleanup-original" enabled="true" kernel-size="5"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="gray" enabled="true" conversion="Bgr2Gray"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DetectEdgesCanny" name="find-edges" enabled="true" threshold-1="5.0" threshold-2="15.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="predetect-1" enabled="true" kernel-size="5"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="predetect-2" enabled="false" kernel-size="7"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DetectFixedCirclesHough" name="results" enabled="true" dp="1.0" param-1="25.0" param-2="20.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="recalled" enabled="true" image-stage-name="original"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawCircles" name="display" enabled="true" circles-stage-name="results" thickness="1">
-                     <color r="255" g="0" b="0" a="255"/>
-                  </cv-stage>
-               </stages>
-            </pipeline>
-         </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.ReferenceStripFeeder" id="FDR1580731762192" name="Feeder Test" enabled="true" part-id="FIDUCIAL-1X2-FIDUCIAL1X2" retry-count="3" pick-retry-count="3" tape-type="WhitePaper" vision-enabled="true" feed-count="0">
-            <location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <reference-hole-location units="Millimeters" x="397.971" y="68.473" z="-4.0" rotation="0.0"/>
-            <last-hole-location units="Millimeters" x="397.98" y="64.421" z="-4.0" rotation="0.0"/>
-            <part-pitch value="4.0" units="Millimeters"/>
-            <tape-width value="8.0" units="Millimeters"/>
-            <pipeline>
-               <stages>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="original" enabled="true" settle-first="true" count="1"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="original" enabled="true" default-light="true" settle-first="true" count="1"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="cleanup-original" enabled="true" kernel-size="5"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="gray" enabled="true" conversion="Bgr2Gray"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.DetectEdgesCanny" name="find-edges" enabled="true" threshold-1="5.0" threshold-2="15.0"/>
@@ -250,53 +130,58 @@
          </feeder>
       </feeders>
       <cameras>
-         <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" id="CAM1567419501506" name="bottom" looking="Up" settle-time-ms="250" rotation="0.0" flip-x="false" flip-y="false" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" unique-id="USB 2.0 PC Cam \\?\usb#vid_5149&amp;pid_13d3&amp;mi_00#7&amp;195d2e77&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0" fps="30.0">
-            <units-per-pixel units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+         <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" id="CAM166d69afab89f00e" name="bedcam" looking="Up" auto-visible="false" shown-in-multi-camera-view="true" before-capture-light-on="true" user-action-light-on="true" after-capture-light-off="false" anti-glare-light-off="false" enable-units-per-pixel-3-d="false" auto-view-plane-z="false" settle-method="FixedTime" settle-time-ms="250" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" fps="5.0" suspend-preview-in-tasks="false" capture-try-count="4" capture-try-timeout-ms="2000" rotation="0.0" flip-x="false" flip-y="true" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" allow-machine-actuators="false" focus-sensing-method="None" unique-id="USB 2.0 PC Cam \\?\usb#vid_5149&amp;pid_13d3&amp;mi_00#8&amp;10742d25&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0">
+            <units-per-pixel units="Millimeters" x="0.01111111" y="0.01162791" z="0.0" rotation="0.0"/>
             <vision-provider class="org.openpnp.machine.reference.vision.OpenCvVisionProvider"/>
-            <head-offsets units="Millimeters" x="-3.5" y="-1.0" z="0.0" rotation="0.0"/>
-            <safe-z value="0.0" units="Millimeters"/>
+            <head-offsets units="Millimeters" x="-53.977" y="94.133" z="0.0" rotation="0.0"/>
             <calibration enabled="false">
-               <camera-matrix length="9">0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0</camera-matrix>
+               <camera-matrix length="9">6.199766824520647E223, 2.8806793736619725E214, 4.0541785489840785E228, 4.2854800276585076E170, 3.60772083633585E-85, 1.3139730257272647E-47, 8.429917140154928E276, 7.691193644833856E218, 1.476498187985709E-28</camera-matrix>
                <distortion-coefficients length="5">0.0, 0.0, 0.0, 0.0, 0.0</distortion-coefficients>
             </calibration>
+            <focus-provider class="org.openpnp.machine.reference.camera.AutoFocusProvider" averaged-frames="1" focus-speed="0.5" show-diagnostics="true">
+               <focal-resolution value="0.05" units="Millimeters"/>
+            </focus-provider>
             <back-light-compensation property="BackLightCompensation" value="0" auto="false"/>
-            <brightness property="Brightness" value="141" auto="false"/>
-            <contrast property="Contrast" value="85" auto="false"/>
+            <brightness property="Brightness" value="0" auto="false"/>
+            <contrast property="Contrast" value="51" auto="false"/>
             <exposure property="Exposure"/>
-            <focus property="Focus"/>
+            <focus property="Focus" value="0" auto="false"/>
             <gain property="Gain"/>
-            <gamma property="Gamma" value="3" auto="false"/>
+            <gamma property="Gamma" value="4" auto="false"/>
             <hue property="Hue" value="-3" auto="false"/>
             <power-line-frequency property="PowerLineFrequency" value="1" auto="false"/>
-            <saturation property="Saturation" value="63" auto="false"/>
-            <sharpness property="Sharpness" value="4" auto="false"/>
-            <white-balance property="WhiteBalance" value="6500" auto="false"/>
+            <saturation property="Saturation" value="15" auto="false"/>
+            <sharpness property="Sharpness" value="3" auto="false"/>
+            <white-balance property="WhiteBalance" value="4650" auto="false"/>
             <zoom property="Zoom"/>
          </camera>
+         <camera class="org.openpnp.machine.reference.camera.Webcams" id="CAM166d69fcd28816b9" name="PCcam" looking="Down" auto-visible="true" shown-in-multi-camera-view="true" before-capture-light-on="true" user-action-light-on="true" after-capture-light-off="false" anti-glare-light-off="false" enable-units-per-pixel-3-d="false" auto-view-plane-z="false" settle-method="FixedTime" settle-time-ms="250" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" fps="5.0" suspend-preview-in-tasks="false" capture-try-count="4" capture-try-timeout-ms="2000" rotation="0.0" flip-x="false" flip-y="false" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" allow-machine-actuators="false" focus-sensing-method="None" device-id="HP Webcam [2 MP Macro] 0" preferred-width="0" preferred-height="0">
+            <units-per-pixel units="Millimeters" x="0.125" y="0.11111111" z="0.0" rotation="0.0"/>
+            <vision-provider class="org.openpnp.machine.reference.vision.OpenCvVisionProvider"/>
+            <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <calibration enabled="false">
+               <camera-matrix length="9">0.0, 2.1219957905E-314, 2.1398813E-317, 4.9E-324, 7.68509887E-315, 4.9E-324, 2.1219957905E-314, 0.0, 1.8774E-320</camera-matrix>
+               <distortion-coefficients length="5">0.0, 0.0, 0.0, 0.0, 0.0</distortion-coefficients>
+            </calibration>
+            <focus-provider class="org.openpnp.machine.reference.camera.AutoFocusProvider" averaged-frames="1" focus-speed="0.5" show-diagnostics="true">
+               <focal-resolution value="0.05" units="Millimeters"/>
+            </focus-provider>
+         </camera>
       </cameras>
-      <actuators>
-         <actuator class="org.openpnp.machine.reference.ReferenceActuator" id="ACT1580115049383" name="N1:PUMP" index="0">
-            <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <safe-z value="0.0" units="Millimeters"/>
-         </actuator>
-         <actuator class="org.openpnp.machine.reference.ReferenceActuator" id="ACT1580115882023" name="N1:SOLENOID" index="0">
-            <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <safe-z value="0.0" units="Millimeters"/>
-         </actuator>
-      </actuators>
+      <actuators/>
       <part-alignments>
          <part-alignment class="org.openpnp.machine.reference.vision.ReferenceBottomVision" enabled="true" pre-rotate="false" max-vision-passes="3" max-angular-offset="10.0">
             <pipeline>
                <stages>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" settle-first="true" count="1"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="13" enabled="true" prefix="bv_source_" suffix=".png"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="10" enabled="true" kernel-size="9"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="4" enabled="true" diameter="525"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="1" enabled="true" conversion="Bgr2HsvFull"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="2" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="60" hue-max="130" saturation-min="0" saturation-max="255" value-min="0" value-max="255" invert="false" binary-mask="false"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="2" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="-1" hue-max="-1" saturation-min="-1" saturation-max="-1" value-min="-1" value-max="-1" invert="false" binary-mask="false"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="3" enabled="true" conversion="Hsv2BgrFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="6" enabled="true" conversion="Bgr2Gray"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.Threshold" name="12" enabled="true" threshold="100" auto="false" invert="false"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.Threshold" name="12" enabled="true" threshold="189" auto="false" invert="false"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="5" enabled="true" retrieval-mode="List" approximation-method="None"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="9" enabled="true" contours-stage-name="5" min-area="50.0" max-area="900000.0"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="11" enabled="true" diameter="0"/>
@@ -312,11 +197,95 @@
             <max-linear-offset value="1.0" units="Millimeters"/>
             <part-settings-by-part-id class="java.util.HashMap">
                <entry>
-                  <string>R0201-1K</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default">
+                  <string>R0805-1K</string>
+                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <pipeline>
                         <stages>
-                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" settle-first="true" count="1"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="13" enabled="true" prefix="bv_source_" suffix=".png"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="10" enabled="true" kernel-size="9"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="4" enabled="true" diameter="525"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="1" enabled="true" conversion="Bgr2HsvFull"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="2" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="60" hue-max="130" saturation-min="0" saturation-max="255" value-min="0" value-max="255" invert="false" binary-mask="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="3" enabled="true" conversion="Hsv2BgrFull"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="6" enabled="true" conversion="Bgr2Gray"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.Threshold" name="12" enabled="true" threshold="100" auto="false" invert="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="5" enabled="true" retrieval-mode="List" approximation-method="None"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="9" enabled="true" contours-stage-name="5" min-area="50.0" max-area="900000.0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="11" enabled="true" diameter="0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawContours" name="7" enabled="true" contours-stage-name="9" thickness="2" index="-1">
+                              <color r="255" g="255" b="255" a="255"/>
+                           </cv-stage>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRect" name="results" enabled="true" threshold-min="100" threshold-max="255"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="14" enabled="true" image-stage-name="0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="8" enabled="true" rotated-rects-stage-name="results" thickness="2" draw-rect-center="false" rect-center-radius="20" show-orientation="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="15" enabled="true" prefix="bv_result_" suffix=".png"/>
+                        </stages>
+                     </pipeline>
+                  </part-settings>
+               </entry>
+               <entry>
+                  <string>R0603-1K</string>
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                     <pipeline>
+                        <stages>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="13" enabled="true" prefix="bv_source_" suffix=".png"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="10" enabled="true" kernel-size="9"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="4" enabled="true" diameter="525"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="1" enabled="true" conversion="Bgr2HsvFull"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="2" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="60" hue-max="130" saturation-min="0" saturation-max="255" value-min="0" value-max="255" invert="false" binary-mask="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="3" enabled="true" conversion="Hsv2BgrFull"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="6" enabled="true" conversion="Bgr2Gray"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="9" enabled="true" contours-stage-name="5" min-area="50.0" max-area="900000.0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.Threshold" name="12" enabled="true" threshold="100" auto="false" invert="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="5" enabled="true" retrieval-mode="List" approximation-method="None"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="11" enabled="true" diameter="0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawContours" name="7" enabled="true" contours-stage-name="9" thickness="2" index="-1">
+                              <color r="255" g="255" b="255" a="255"/>
+                           </cv-stage>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRect" name="results" enabled="true" threshold-min="100" threshold-max="255"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="14" enabled="true" image-stage-name="0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="8" enabled="true" rotated-rects-stage-name="results" thickness="2" draw-rect-center="false" rect-center-radius="20" show-orientation="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="15" enabled="true" prefix="bv_result_" suffix=".png"/>
+                        </stages>
+                     </pipeline>
+                  </part-settings>
+               </entry>
+               <entry>
+                  <string>FIDUCIAL-HOME</string>
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                     <pipeline>
+                        <stages>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="13" enabled="true" prefix="bv_source_" suffix=".png"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="10" enabled="true" kernel-size="9"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="4" enabled="true" diameter="525"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="1" enabled="true" conversion="Bgr2HsvFull"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="2" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="60" hue-max="130" saturation-min="0" saturation-max="255" value-min="0" value-max="255" invert="false" binary-mask="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="3" enabled="true" conversion="Hsv2BgrFull"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="6" enabled="true" conversion="Bgr2Gray"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="9" enabled="true" contours-stage-name="5" min-area="50.0" max-area="900000.0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.Threshold" name="12" enabled="true" threshold="100" auto="false" invert="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="5" enabled="true" retrieval-mode="List" approximation-method="None"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="11" enabled="true" diameter="0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawContours" name="7" enabled="true" contours-stage-name="9" thickness="2" index="-1">
+                              <color r="255" g="255" b="255" a="255"/>
+                           </cv-stage>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRect" name="results" enabled="true" threshold-min="100" threshold-max="255"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="14" enabled="true" image-stage-name="0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="8" enabled="true" rotated-rects-stage-name="results" thickness="2" draw-rect-center="false" rect-center-radius="20" show-orientation="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="15" enabled="true" prefix="bv_result_" suffix=".png"/>
+                        </stages>
+                     </pipeline>
+                  </part-settings>
+               </entry>
+               <entry>
+                  <string>R0201-1K</string>
+                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                     <pipeline>
+                        <stages>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
                            <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="13" enabled="true" prefix="bv_source_" suffix=".png"/>
                            <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="10" enabled="true" kernel-size="9"/>
                            <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="4" enabled="true" diameter="525"/>
@@ -341,10 +310,10 @@
                </entry>
                <entry>
                   <string>R0402-1K</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default">
+                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <pipeline>
                         <stages>
-                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" settle-first="true" count="1"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
                            <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="13" enabled="true" prefix="bv_source_" suffix=".png"/>
                            <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="10" enabled="true" kernel-size="9"/>
                            <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="4" enabled="true" diameter="525"/>
@@ -367,18 +336,234 @@
                      </pipeline>
                   </part-settings>
                </entry>
+               <entry>
+                  <string>FIDUCIAL-1X2-FIDUCIAL1X2</string>
+                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                     <pipeline>
+                        <stages>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="13" enabled="true" prefix="bv_source_" suffix=".png"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="10" enabled="true" kernel-size="9"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="4" enabled="true" diameter="525"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="1" enabled="true" conversion="Bgr2HsvFull"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="2" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="60" hue-max="130" saturation-min="0" saturation-max="255" value-min="0" value-max="255" invert="false" binary-mask="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="3" enabled="true" conversion="Hsv2BgrFull"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="6" enabled="true" conversion="Bgr2Gray"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.Threshold" name="12" enabled="true" threshold="100" auto="false" invert="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="5" enabled="true" retrieval-mode="List" approximation-method="None"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="9" enabled="true" contours-stage-name="5" min-area="50.0" max-area="900000.0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="11" enabled="true" diameter="0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawContours" name="7" enabled="true" contours-stage-name="9" thickness="2" index="-1">
+                              <color r="255" g="255" b="255" a="255"/>
+                           </cv-stage>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRect" name="results" enabled="true" threshold-min="100" threshold-max="255"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="14" enabled="true" image-stage-name="0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="8" enabled="true" rotated-rects-stage-name="results" thickness="2" draw-rect-center="false" rect-center-radius="20" show-orientation="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="15" enabled="true" prefix="bv_result_" suffix=".png"/>
+                        </stages>
+                     </pipeline>
+                  </part-settings>
+               </entry>
+               <entry>
+                  <string>R0805-RTD</string>
+                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                     <pipeline>
+                        <stages>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="13" enabled="true" prefix="bv_source_" suffix=".png"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="10" enabled="true" kernel-size="9"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="4" enabled="true" diameter="525"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="1" enabled="true" conversion="Bgr2HsvFull"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="2" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="60" hue-max="130" saturation-min="0" saturation-max="255" value-min="0" value-max="255" invert="false" binary-mask="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="3" enabled="true" conversion="Hsv2BgrFull"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="6" enabled="true" conversion="Bgr2Gray"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="9" enabled="true" contours-stage-name="5" min-area="50.0" max-area="900000.0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.Threshold" name="12" enabled="true" threshold="100" auto="false" invert="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="5" enabled="true" retrieval-mode="List" approximation-method="None"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="11" enabled="true" diameter="0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawContours" name="7" enabled="true" contours-stage-name="9" thickness="2" index="-1">
+                              <color r="255" g="255" b="255" a="255"/>
+                           </cv-stage>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRect" name="results" enabled="true" threshold-min="100" threshold-max="255"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="14" enabled="true" image-stage-name="0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="8" enabled="true" rotated-rects-stage-name="results" thickness="2" draw-rect-center="false" rect-center-radius="20" show-orientation="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="15" enabled="true" prefix="bv_result_" suffix=".png"/>
+                        </stages>
+                     </pipeline>
+                  </part-settings>
+               </entry>
             </part-settings-by-part-id>
          </part-alignment>
       </part-alignments>
-      <discard-location units="Millimeters" x="470.7" y="21.2" z="0.0" rotation="0.0"/>
+      <drivers>
+         <driver class="org.openpnp.machine.reference.driver.GcodeAsyncDriver" id="DRV166208a07d8ab5cf" name="GcodeDriver" motion-control-type="SimpleSCurve" communications="serial" connection-keep-alive="false" units="Millimeters" max-feed-rate="0" backlash-offset-x="-0.3" backlash-offset-y="-1.0" backlash-offset-z="0.0" backlash-offset-r="0.0" non-squareness-factor="0.0" backlash-feed-rate-factor="0.1" timeout-milliseconds="5000" connect-wait-time-milliseconds="1000" visual-homing-enabled="false" backslash-escaped-characters-enabled="false" remove-comments="true" compress-gcode="true" logging-gcode="false" supporting-pre-move="false" using-letter-variables="true" infinity-timeout-milliseconds="60000" writer-polling-interval="100" writer-queue-timeout="60000" max-commands-queued="1000" confirmation-flow-control="true" reported-location-confirmation="true" interpolation-max-steps="32" interpolation-jerk-steps="4" interpolation-time-step="0.001" interpolation-min-step="16">
+            <serial line-ending-type="LF" port-name="COM11" baud="115200" flow-control="XonXoff" data-bits="Eight" stop-bits="One" parity="None" set-dtr="true" set-rts="true" name="SerialPortCommunications"/>
+            <tcp line-ending-type="LF" ip-address="127.0.0.1" port="23" name="TcpCommunications"/>
+            <simulated line-ending-type="LF"/>
+            <homing-fiducial-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <detected-firmware><![CDATA[FIRMWARE_NAME:TinyG, FIRMWARE_URL:https%3A//github.com/synthetos/TinyG, FIRMWARE_VERSION:0.97, FIRMWARE_BUILD:440.21, HARDWARE_PLATFORM:1.00, HARDWARE_VERSION:8.00]]></detected-firmware>
+            <reported-axes><![CDATA[X:0.0000 Y:0.0000 Z:0.0000 A:0.0000 B:0.0000 C:0.0000]]></reported-axes>
+            <command type="DISABLE_COMMAND">
+               <text><![CDATA[M9 M5]]></text>
+            </command>
+            <command type="ENABLE_COMMAND">
+               <text><![CDATA[G21 M9]]></text>
+            </command>
+            <command type="CONNECT_COMMAND">
+               <text><![CDATA[$ex=1]]></text>
+               <text><![CDATA[$SV=2]]></text>
+               <text><![CDATA[$ME ]]></text>
+               <text><![CDATA[$1pm=2]]></text>
+               <text><![CDATA[$2pm=2]]></text>
+               <text><![CDATA[$3pm=2]]></text>
+               <text><![CDATA[$4pm=2]]></text>
+               <text><![CDATA[$mt=1000000000]]></text>
+               <text><![CDATA[G21 G90 G92 X0 Y0 Z0 A0 M8 M5]]></text>
+               <text><![CDATA[$xjm=2000]]></text>
+               <text><![CDATA[$xvm=8000]]></text>
+               <text><![CDATA[$xsv=2000]]></text>
+               <text><![CDATA[$xsn=3]]></text>
+               <text><![CDATA[$xjh=2000]]></text>
+               <text><![CDATA[$xsx=2]]></text>
+               <text><![CDATA[$1mi=8]]></text>
+               <text><![CDATA[$1sa=0.900]]></text>
+               <text><![CDATA[$1tr=39.8930]]></text>
+               <text><![CDATA[$yjm=2000]]></text>
+               <text><![CDATA[$yvm=8000]]></text>
+               <text><![CDATA[$ysn=3]]></text>
+               <text><![CDATA[$ysx=2]]></text>
+               <text><![CDATA[$yjh=2000]]></text>
+               <text><![CDATA[$ysv=1800]]></text>
+               <text><![CDATA[$2mi=8]]></text>
+               <text><![CDATA[$2sa=0.900]]></text>
+               <text><![CDATA[$2tr=39.9750]]></text>
+               <text><![CDATA[$zjm=2300]]></text>
+               <text><![CDATA[$zvm=3000]]></text>
+               <text><![CDATA[$ztm=60]]></text>
+               <text><![CDATA[$zjh=2000]]></text>
+               <text><![CDATA[$zsv=1500]]></text>
+               <text><![CDATA[$xfr=100000]]></text>
+               <text><![CDATA[$xtm=650]]></text>
+               <text><![CDATA[$yfr=100000]]></text>
+               <text><![CDATA[$ytm=400]]></text>
+               <text><![CDATA[$zfr=3000]]></text>
+               <text><![CDATA[$afr=20000]]></text>
+               <text><![CDATA[$3mi=8]]></text>
+               <text><![CDATA[$3sa=1.800]]></text>
+               <text><![CDATA[$3tr=8.0000]]></text>
+               <text><![CDATA[$ajm=600]]></text>
+               <text><![CDATA[$avm=20000]]></text>
+               <text><![CDATA[$4mi=8]]></text>
+               <text><![CDATA[$4sa=0.900]]></text>
+               <text><![CDATA[$4tr=160.0000]]></text>
+               <text><![CDATA[$mt=300.00]]></text>
+               <text><![CDATA[$zzb=2]]></text>
+               <text><![CDATA[$3po=1]]></text>
+               <text><![CDATA[$zsx=3]]></text>
+               <text><![CDATA[$zsn=0]]></text>
+               <text><![CDATA[$st=1]]></text>
+               <text><![CDATA[$asn=0]]></text>
+            </command>
+            <command type="HOME_COMMAND">
+               <text><![CDATA[G28.2 X0 Y0 Z0 A0 ]]></text>
+               <text><![CDATA[G92 X0 Y0 Z0]]></text>
+            </command>
+            <command type="COMMAND_CONFIRM_REGEX">
+               <text><![CDATA[^tinyg .* ok.*]]></text>
+            </command>
+            <command type="PICK_COMMAND">
+               <text><![CDATA[M8]]></text>
+               <text><![CDATA[G4 P0.5]]></text>
+            </command>
+            <command type="PLACE_COMMAND">
+               <text><![CDATA[M9]]></text>
+               <text><![CDATA[G4 P0.5]]></text>
+            </command>
+            <command type="PUMP_ON_COMMAND">
+               <text><![CDATA[M4]]></text>
+            </command>
+            <command type="PUMP_OFF_COMMAND">
+               <text><![CDATA[M5]]></text>
+            </command>
+            <command type="MOVE_TO_COMMAND">
+               <text><![CDATA[M201.3 {XJerk:X%.0f} {YJerk:Y%.0f} {ZJerk:Z%.0f} {AJerk:A%.0f} ]]></text>
+               <text><![CDATA[G1 {X:X%.4f} {Y:Y%.4f} {Z:Z%.4f} {A:A%.4f} {FeedRate:F%.2f} ; move to target]]></text>
+            </command>
+            <command head-mountable-id="ACT1580115049383" type="ACTUATE_BOOLEAN_COMMAND">
+               <text><![CDATA[{True:M4}]]></text>
+               <text><![CDATA[{False:M5}]]></text>
+            </command>
+            <command head-mountable-id="ACT1580115882023" type="ACTUATE_BOOLEAN_COMMAND">
+               <text><![CDATA[{True:M8}]]></text>
+               <text><![CDATA[{False:M9}]]></text>
+            </command>
+            <command type="GET_POSITION_COMMAND">
+               <text><![CDATA[M114 ; get position]]></text>
+            </command>
+            <command type="POSITION_REPORT_REGEX">
+               <text><![CDATA[^.*X:(?<X>-?\d+\.\d+) Y:(?<Y>-?\d+\.\d+) Z:(?<Z>-?\d+\.\d+) .*A:(?<A>-?\d+\.\d+).*]]></text>
+            </command>
+            <command type="COMMAND_ERROR_REGEX">
+               <text><![CDATA[^tinyg .* err:.*]]></text>
+            </command>
+            <command type="SET_GLOBAL_OFFSETS_COMMAND">
+               <text><![CDATA[G28.3 {X:X%.4f} {Y:Y%.4f} {Z:Z%.4f} {A:A%.4f} ; reset coordinates]]></text>
+            </command>
+            <command type="MOVE_TO_COMPLETE_COMMAND">
+               <text><![CDATA[M400 ; Wait for moves to complete before returning]]></text>
+            </command>
+            <command head-mountable-id="ACT166ef1f3c8e8bea5" type="ACTUATE_BOOLEAN_COMMAND">
+               <text><![CDATA[{True:M8}]]></text>
+               <text><![CDATA[{False:M9}]]></text>
+            </command>
+            <command head-mountable-id="ACT166ef209918713f3" type="ACTUATE_BOOLEAN_COMMAND">
+               <text><![CDATA[{True:M4}]]></text>
+               <text><![CDATA[{False:M5}]]></text>
+            </command>
+            <sub-drivers class="java.util.ArrayList"/>
+            <axes class="java.util.ArrayList">
+               <axis name="x" type="X" home-coordinate="0.0">
+                  <head-mountable-ids class="java.util.HashSet">
+                     <string>*</string>
+                  </head-mountable-ids>
+               </axis>
+               <axis name="y" type="Y" home-coordinate="0.0">
+                  <head-mountable-ids class="java.util.HashSet">
+                     <string>*</string>
+                  </head-mountable-ids>
+               </axis>
+               <axis name="z" type="Z" home-coordinate="0.0">
+                  <head-mountable-ids class="java.util.HashSet">
+                     <string>N1</string>
+                  </head-mountable-ids>
+               </axis>
+               <axis name="rotation" type="Rotation" home-coordinate="0.0">
+                  <head-mountable-ids class="java.util.HashSet">
+                     <string>*</string>
+                  </head-mountable-ids>
+               </axis>
+            </axes>
+            <junction-deviation value="0.02" units="Millimeters"/>
+         </driver>
+      </drivers>
+      <discard-location units="Millimeters" x="464.5" y="17.01" z="-10.0" rotation="14.659"/>
       <properties>
+         <entry>
+            <string>MultiPlacementBoardLocationProperties</string>
+            <object class="org.openpnp.gui.processes.MultiPlacementBoardLocationProcess$MultiPlacementBoardLocationProperties">
+               <scaling-tolerance>0.05</scaling-tolerance>
+               <shearing-tolerance>0.05</shearing-tolerance>
+               <board-location-tolerance value="5.0" units="Millimeters"/>
+               <auto-move-for-all-placements>true</auto-move-for-all-placements>
+            </object>
+         </entry>
          <entry>
             <string>Welcome2_0_Dialog_Shown</string>
             <object class="java.lang.Boolean">true</object>
          </entry>
       </properties>
       <nozzle-tips>
-         <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="NT1" name="NT1" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" is-push-and-drag-allowed="false">
+         <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="NT1" name="NT1" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" vision-calibration="None" vision-calibration-trigger="Manual" vision-match-minimum-score="0.2" vision-calibration-max-passes="3" z-calibration-trigger="Manual" z-calibration-fail-homing="true" template-nozzle-tip="false" template-locked="false" establish-part-on-level="false" establish-part-off-level="false" part-off-probing-milliseconds="0" part-off-dwell-milliseconds="0" is-push-and-drag-allowed="false">
             <changer-start-location units="Millimeters" x="-38.8" y="305.1" z="-8.5" rotation="0.0"/>
             <changer-start-to-mid-speed>10.0</changer-start-to-mid-speed>
             <changer-mid-location units="Millimeters" x="-38.8" y="305.1" z="-24.5" rotation="0.0"/>
@@ -386,10 +571,17 @@
             <changer-mid-location-2 units="Millimeters" x="-8.8" y="305.1" z="-24.5" rotation="0.0"/>
             <changer-mid-2-to-end-speed>10.0</changer-mid-2-to-end-speed>
             <changer-end-location units="Millimeters" x="-8.8" y="305.1" z="0.5" rotation="0.0"/>
-            <calibration angle-subdivisions="6" allow-misdetections="0" angle-start="-180.0" angle-stop="180.0" excenter-ratio="0.25" enabled="false" runout-compensation-algorithm="ModelCameraOffset" version="2.0" recalibration-trigger="NozzleTipChangeInJob" offset-threshold="0.0">
+            <touch-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <vision-template-dimension-x value="10.0" units="Millimeters"/>
+            <vision-template-dimension-y value="10.0" units="Millimeters"/>
+            <vision-template-tolerance value="4.0" units="Millimeters"/>
+            <vision-calibration-tolerance value="0.7" units="Millimeters"/>
+            <max-part-diameter value="20.0" units="Millimeters"/>
+            <max-part-height value="10.0" units="Millimeters"/>
+            <calibration angle-subdivisions="6" allow-misdetections="0" angle-start="-180.0" angle-stop="180.0" excenter-ratio="0.25" enabled="false" fail-homing="true" runout-compensation-algorithm="ModelCameraOffsetAffine" version="2.1" recalibration-trigger="NozzleTipChangeInJob" offset-threshold="0.0">
                <pipeline>
                   <stages>
-                     <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" settle-first="true" count="1"/>
+                     <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="1" enabled="true" diameter="250"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2Gray"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.Threshold" name="3" enabled="true" threshold="15" auto="false" invert="false"/>
@@ -407,13 +599,24 @@
                <offset-threshold-length value="0.5" units="Millimeters"/>
                <calibration-Z-offset value="0.0" units="Millimeters"/>
             </calibration>
+            <method-part-on>None</method-part-on>
+            <part-on-check-after-pick>true</part-on-check-after-pick>
+            <part-on-check-align>true</part-on-check-align>
+            <part-on-check-before-place>true</part-on-check-before-place>
             <vacuum-level-part-on-low>0.0</vacuum-level-part-on-low>
             <vacuum-level-part-on-high>0.0</vacuum-level-part-on-high>
+            <vacuum-difference-part-on-low>0.0</vacuum-difference-part-on-low>
+            <vacuum-difference-part-on-high>0.0</vacuum-difference-part-on-high>
+            <method-part-off>None</method-part-off>
+            <part-off-check-after-place>true</part-off-check-after-place>
+            <part-off-check-before-pick>true</part-off-check-before-pick>
             <vacuum-level-part-off-low>0.0</vacuum-level-part-off-low>
             <vacuum-level-part-off-high>0.0</vacuum-level-part-off-high>
+            <vacuum-difference-part-off-low>0.0</vacuum-difference-part-off-low>
+            <vacuum-difference-part-off-high>0.0</vacuum-difference-part-off-high>
             <diameter-low value="0.0" units="Millimeters"/>
          </nozzle-tip>
-         <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="TIP1578899164840" name="NT2" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" is-push-and-drag-allowed="false">
+         <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="TIP1578899164840" name="NT2" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" vision-calibration="None" vision-calibration-trigger="Manual" vision-match-minimum-score="0.2" vision-calibration-max-passes="3" z-calibration-trigger="Manual" z-calibration-fail-homing="true" template-nozzle-tip="false" template-locked="false" establish-part-on-level="false" establish-part-off-level="false" part-off-probing-milliseconds="0" part-off-dwell-milliseconds="0" is-push-and-drag-allowed="false">
             <changer-start-location units="Millimeters" x="-39.0" y="283.0" z="-8.5" rotation="0.0"/>
             <changer-start-to-mid-speed>10.0</changer-start-to-mid-speed>
             <changer-mid-location units="Millimeters" x="-39.0" y="283.0" z="-24.5" rotation="0.0"/>
@@ -421,10 +624,17 @@
             <changer-mid-location-2 units="Millimeters" x="-9.0" y="283.0" z="-24.5" rotation="0.0"/>
             <changer-mid-2-to-end-speed>10.0</changer-mid-2-to-end-speed>
             <changer-end-location units="Millimeters" x="-9.0" y="283.0" z="0.5" rotation="0.0"/>
-            <calibration angle-subdivisions="6" allow-misdetections="0" angle-start="-180.0" angle-stop="180.0" excenter-ratio="0.25" enabled="false" runout-compensation-algorithm="ModelCameraOffset" version="2.0" recalibration-trigger="NozzleTipChangeInJob" offset-threshold="0.0">
+            <touch-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <vision-template-dimension-x value="10.0" units="Millimeters"/>
+            <vision-template-dimension-y value="10.0" units="Millimeters"/>
+            <vision-template-tolerance value="4.0" units="Millimeters"/>
+            <vision-calibration-tolerance value="0.7" units="Millimeters"/>
+            <max-part-diameter value="20.0" units="Millimeters"/>
+            <max-part-height value="10.0" units="Millimeters"/>
+            <calibration angle-subdivisions="6" allow-misdetections="0" angle-start="-180.0" angle-stop="180.0" excenter-ratio="0.25" enabled="false" fail-homing="true" runout-compensation-algorithm="ModelCameraOffsetAffine" version="2.1" recalibration-trigger="NozzleTipChangeInJob" offset-threshold="0.0">
                <pipeline>
                   <stages>
-                     <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" settle-first="true" count="1"/>
+                     <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="1" enabled="true" diameter="250"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2Gray"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.Threshold" name="3" enabled="true" threshold="15" auto="false" invert="false"/>
@@ -442,13 +652,24 @@
                <offset-threshold-length value="0.5" units="Millimeters"/>
                <calibration-Z-offset value="0.0" units="Millimeters"/>
             </calibration>
+            <method-part-on>None</method-part-on>
+            <part-on-check-after-pick>true</part-on-check-after-pick>
+            <part-on-check-align>true</part-on-check-align>
+            <part-on-check-before-place>true</part-on-check-before-place>
             <vacuum-level-part-on-low>0.0</vacuum-level-part-on-low>
             <vacuum-level-part-on-high>0.0</vacuum-level-part-on-high>
+            <vacuum-difference-part-on-low>0.0</vacuum-difference-part-on-low>
+            <vacuum-difference-part-on-high>0.0</vacuum-difference-part-on-high>
+            <method-part-off>None</method-part-off>
+            <part-off-check-after-place>true</part-off-check-after-place>
+            <part-off-check-before-pick>true</part-off-check-before-pick>
             <vacuum-level-part-off-low>0.0</vacuum-level-part-off-low>
             <vacuum-level-part-off-high>0.0</vacuum-level-part-off-high>
+            <vacuum-difference-part-off-low>0.0</vacuum-difference-part-off-low>
+            <vacuum-difference-part-off-high>0.0</vacuum-difference-part-off-high>
             <diameter-low value="0.0" units="Millimeters"/>
          </nozzle-tip>
-         <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="TIP1578910823628" name="NT3" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" is-push-and-drag-allowed="false">
+         <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="TIP1578910823628" name="NT3" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" vision-calibration="None" vision-calibration-trigger="Manual" vision-match-minimum-score="0.2" vision-calibration-max-passes="3" z-calibration-trigger="Manual" z-calibration-fail-homing="true" template-nozzle-tip="false" template-locked="false" establish-part-on-level="false" establish-part-off-level="false" part-off-probing-milliseconds="0" part-off-dwell-milliseconds="0" is-push-and-drag-allowed="false">
             <changer-start-location units="Millimeters" x="-39.0" y="261.0" z="-8.5" rotation="0.0"/>
             <changer-start-to-mid-speed>10.0</changer-start-to-mid-speed>
             <changer-mid-location units="Millimeters" x="-39.0" y="261.0" z="-24.5" rotation="0.0"/>
@@ -456,10 +677,17 @@
             <changer-mid-location-2 units="Millimeters" x="-9.0" y="261.0" z="-24.5" rotation="0.0"/>
             <changer-mid-2-to-end-speed>10.0</changer-mid-2-to-end-speed>
             <changer-end-location units="Millimeters" x="-9.0" y="261.0" z="0.5" rotation="0.0"/>
-            <calibration angle-subdivisions="6" allow-misdetections="0" angle-start="-180.0" angle-stop="180.0" excenter-ratio="0.25" enabled="false" runout-compensation-algorithm="ModelCameraOffset" version="2.0" recalibration-trigger="NozzleTipChangeInJob" offset-threshold="0.0">
+            <touch-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <vision-template-dimension-x value="10.0" units="Millimeters"/>
+            <vision-template-dimension-y value="10.0" units="Millimeters"/>
+            <vision-template-tolerance value="4.0" units="Millimeters"/>
+            <vision-calibration-tolerance value="0.7" units="Millimeters"/>
+            <max-part-diameter value="20.0" units="Millimeters"/>
+            <max-part-height value="10.0" units="Millimeters"/>
+            <calibration angle-subdivisions="6" allow-misdetections="0" angle-start="-180.0" angle-stop="180.0" excenter-ratio="0.25" enabled="false" fail-homing="true" runout-compensation-algorithm="ModelCameraOffsetAffine" version="2.1" recalibration-trigger="NozzleTipChangeInJob" offset-threshold="0.0">
                <pipeline>
                   <stages>
-                     <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" settle-first="true" count="1"/>
+                     <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="1" enabled="true" diameter="250"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2Gray"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.Threshold" name="3" enabled="true" threshold="15" auto="false" invert="false"/>
@@ -477,13 +705,24 @@
                <offset-threshold-length value="0.5" units="Millimeters"/>
                <calibration-Z-offset value="0.0" units="Millimeters"/>
             </calibration>
+            <method-part-on>None</method-part-on>
+            <part-on-check-after-pick>true</part-on-check-after-pick>
+            <part-on-check-align>true</part-on-check-align>
+            <part-on-check-before-place>true</part-on-check-before-place>
             <vacuum-level-part-on-low>0.0</vacuum-level-part-on-low>
             <vacuum-level-part-on-high>0.0</vacuum-level-part-on-high>
+            <vacuum-difference-part-on-low>0.0</vacuum-difference-part-on-low>
+            <vacuum-difference-part-on-high>0.0</vacuum-difference-part-on-high>
+            <method-part-off>None</method-part-off>
+            <part-off-check-after-place>true</part-off-check-after-place>
+            <part-off-check-before-pick>true</part-off-check-before-pick>
             <vacuum-level-part-off-low>0.0</vacuum-level-part-off-low>
             <vacuum-level-part-off-high>0.0</vacuum-level-part-off-high>
+            <vacuum-difference-part-off-low>0.0</vacuum-difference-part-off-low>
+            <vacuum-difference-part-off-high>0.0</vacuum-difference-part-off-high>
             <diameter-low value="0.0" units="Millimeters"/>
          </nozzle-tip>
-         <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="TIP1578911033023" name="NT4" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" is-push-and-drag-allowed="false">
+         <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="TIP1578911033023" name="NT4" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" vision-calibration="None" vision-calibration-trigger="Manual" vision-match-minimum-score="0.2" vision-calibration-max-passes="3" z-calibration-trigger="Manual" z-calibration-fail-homing="true" template-nozzle-tip="false" template-locked="false" establish-part-on-level="false" establish-part-off-level="false" part-off-probing-milliseconds="0" part-off-dwell-milliseconds="0" is-push-and-drag-allowed="false">
             <changer-start-location units="Millimeters" x="-39.0" y="239.0" z="-8.5" rotation="0.0"/>
             <changer-start-to-mid-speed>10.0</changer-start-to-mid-speed>
             <changer-mid-location units="Millimeters" x="-39.0" y="239.0" z="-24.5" rotation="0.0"/>
@@ -491,10 +730,17 @@
             <changer-mid-location-2 units="Millimeters" x="-9.0" y="239.0" z="-24.5" rotation="0.0"/>
             <changer-mid-2-to-end-speed>10.0</changer-mid-2-to-end-speed>
             <changer-end-location units="Millimeters" x="-9.0" y="239.0" z="0.5" rotation="0.0"/>
-            <calibration angle-subdivisions="6" allow-misdetections="0" angle-start="-180.0" angle-stop="180.0" excenter-ratio="0.25" enabled="false" runout-compensation-algorithm="ModelCameraOffset" version="2.0" recalibration-trigger="NozzleTipChangeInJob" offset-threshold="0.0">
+            <touch-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <vision-template-dimension-x value="10.0" units="Millimeters"/>
+            <vision-template-dimension-y value="10.0" units="Millimeters"/>
+            <vision-template-tolerance value="4.0" units="Millimeters"/>
+            <vision-calibration-tolerance value="0.7" units="Millimeters"/>
+            <max-part-diameter value="20.0" units="Millimeters"/>
+            <max-part-height value="10.0" units="Millimeters"/>
+            <calibration angle-subdivisions="6" allow-misdetections="0" angle-start="-180.0" angle-stop="180.0" excenter-ratio="0.25" enabled="false" fail-homing="true" runout-compensation-algorithm="ModelCameraOffsetAffine" version="2.1" recalibration-trigger="NozzleTipChangeInJob" offset-threshold="0.0">
                <pipeline>
                   <stages>
-                     <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" settle-first="true" count="1"/>
+                     <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="1" enabled="true" diameter="250"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2Gray"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.Threshold" name="3" enabled="true" threshold="15" auto="false" invert="false"/>
@@ -512,13 +758,24 @@
                <offset-threshold-length value="0.5" units="Millimeters"/>
                <calibration-Z-offset value="0.0" units="Millimeters"/>
             </calibration>
+            <method-part-on>None</method-part-on>
+            <part-on-check-after-pick>true</part-on-check-after-pick>
+            <part-on-check-align>true</part-on-check-align>
+            <part-on-check-before-place>true</part-on-check-before-place>
             <vacuum-level-part-on-low>0.0</vacuum-level-part-on-low>
             <vacuum-level-part-on-high>0.0</vacuum-level-part-on-high>
+            <vacuum-difference-part-on-low>0.0</vacuum-difference-part-on-low>
+            <vacuum-difference-part-on-high>0.0</vacuum-difference-part-on-high>
+            <method-part-off>None</method-part-off>
+            <part-off-check-after-place>true</part-off-check-after-place>
+            <part-off-check-before-pick>true</part-off-check-before-pick>
             <vacuum-level-part-off-low>0.0</vacuum-level-part-off-low>
             <vacuum-level-part-off-high>0.0</vacuum-level-part-off-high>
+            <vacuum-difference-part-off-low>0.0</vacuum-difference-part-off-low>
+            <vacuum-difference-part-off-high>0.0</vacuum-difference-part-off-high>
             <diameter-low value="0.0" units="Millimeters"/>
          </nozzle-tip>
-         <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="TIP1578911204098" name="NT5" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" is-push-and-drag-allowed="false">
+         <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="TIP1578911204098" name="NT5" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" vision-calibration="None" vision-calibration-trigger="Manual" vision-match-minimum-score="0.2" vision-calibration-max-passes="3" z-calibration-trigger="Manual" z-calibration-fail-homing="true" template-nozzle-tip="false" template-locked="false" establish-part-on-level="false" establish-part-off-level="false" part-off-probing-milliseconds="0" part-off-dwell-milliseconds="0" is-push-and-drag-allowed="false">
             <changer-start-location units="Millimeters" x="-39.0" y="217.0" z="-8.5" rotation="0.0"/>
             <changer-start-to-mid-speed>10.0</changer-start-to-mid-speed>
             <changer-mid-location units="Millimeters" x="-39.0" y="217.0" z="-24.5" rotation="0.0"/>
@@ -526,10 +783,17 @@
             <changer-mid-location-2 units="Millimeters" x="-9.0" y="217.0" z="-24.5" rotation="0.0"/>
             <changer-mid-2-to-end-speed>10.0</changer-mid-2-to-end-speed>
             <changer-end-location units="Millimeters" x="-9.0" y="217.0" z="0.5" rotation="0.0"/>
-            <calibration angle-subdivisions="6" allow-misdetections="0" angle-start="-180.0" angle-stop="180.0" excenter-ratio="0.25" enabled="false" runout-compensation-algorithm="ModelCameraOffset" version="2.0" recalibration-trigger="NozzleTipChangeInJob" offset-threshold="0.0">
+            <touch-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <vision-template-dimension-x value="10.0" units="Millimeters"/>
+            <vision-template-dimension-y value="10.0" units="Millimeters"/>
+            <vision-template-tolerance value="4.0" units="Millimeters"/>
+            <vision-calibration-tolerance value="0.7" units="Millimeters"/>
+            <max-part-diameter value="20.0" units="Millimeters"/>
+            <max-part-height value="10.0" units="Millimeters"/>
+            <calibration angle-subdivisions="6" allow-misdetections="0" angle-start="-180.0" angle-stop="180.0" excenter-ratio="0.25" enabled="false" fail-homing="true" runout-compensation-algorithm="ModelCameraOffsetAffine" version="2.1" recalibration-trigger="NozzleTipChangeInJob" offset-threshold="0.0">
                <pipeline>
                   <stages>
-                     <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" settle-first="true" count="1"/>
+                     <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="1" enabled="true" diameter="250"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2Gray"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.Threshold" name="3" enabled="true" threshold="15" auto="false" invert="false"/>
@@ -547,13 +811,24 @@
                <offset-threshold-length value="0.5" units="Millimeters"/>
                <calibration-Z-offset value="0.0" units="Millimeters"/>
             </calibration>
+            <method-part-on>None</method-part-on>
+            <part-on-check-after-pick>true</part-on-check-after-pick>
+            <part-on-check-align>true</part-on-check-align>
+            <part-on-check-before-place>true</part-on-check-before-place>
             <vacuum-level-part-on-low>0.0</vacuum-level-part-on-low>
             <vacuum-level-part-on-high>0.0</vacuum-level-part-on-high>
+            <vacuum-difference-part-on-low>0.0</vacuum-difference-part-on-low>
+            <vacuum-difference-part-on-high>0.0</vacuum-difference-part-on-high>
+            <method-part-off>None</method-part-off>
+            <part-off-check-after-place>true</part-off-check-after-place>
+            <part-off-check-before-pick>true</part-off-check-before-pick>
             <vacuum-level-part-off-low>0.0</vacuum-level-part-off-low>
             <vacuum-level-part-off-high>0.0</vacuum-level-part-off-high>
+            <vacuum-difference-part-off-low>0.0</vacuum-difference-part-off-low>
+            <vacuum-difference-part-off-high>0.0</vacuum-difference-part-off-high>
             <diameter-low value="0.0" units="Millimeters"/>
          </nozzle-tip>
-         <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="TIP1578911336483" name="NT6" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" is-push-and-drag-allowed="false">
+         <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="TIP1578911336483" name="NT6" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" vision-calibration="None" vision-calibration-trigger="Manual" vision-match-minimum-score="0.2" vision-calibration-max-passes="3" z-calibration-trigger="Manual" z-calibration-fail-homing="true" template-nozzle-tip="false" template-locked="false" establish-part-on-level="false" establish-part-off-level="false" part-off-probing-milliseconds="0" part-off-dwell-milliseconds="0" is-push-and-drag-allowed="false">
             <changer-start-location units="Millimeters" x="-39.0" y="195.0" z="-8.5" rotation="0.0"/>
             <changer-start-to-mid-speed>1.0</changer-start-to-mid-speed>
             <changer-mid-location units="Millimeters" x="-39.0" y="195.0" z="-24.5" rotation="0.0"/>
@@ -561,10 +836,17 @@
             <changer-mid-location-2 units="Millimeters" x="-9.0" y="195.0" z="-24.5" rotation="0.0"/>
             <changer-mid-2-to-end-speed>1.0</changer-mid-2-to-end-speed>
             <changer-end-location units="Millimeters" x="-9.0" y="195.0" z="0.5" rotation="0.0"/>
-            <calibration angle-subdivisions="6" allow-misdetections="0" angle-start="-180.0" angle-stop="180.0" excenter-ratio="0.25" enabled="false" runout-compensation-algorithm="ModelCameraOffset" version="2.0" recalibration-trigger="NozzleTipChangeInJob" offset-threshold="0.0">
+            <touch-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <vision-template-dimension-x value="10.0" units="Millimeters"/>
+            <vision-template-dimension-y value="10.0" units="Millimeters"/>
+            <vision-template-tolerance value="4.0" units="Millimeters"/>
+            <vision-calibration-tolerance value="0.7" units="Millimeters"/>
+            <max-part-diameter value="20.0" units="Millimeters"/>
+            <max-part-height value="10.0" units="Millimeters"/>
+            <calibration angle-subdivisions="6" allow-misdetections="0" angle-start="-180.0" angle-stop="180.0" excenter-ratio="0.25" enabled="false" fail-homing="true" runout-compensation-algorithm="ModelCameraOffsetAffine" version="2.1" recalibration-trigger="NozzleTipChangeInJob" offset-threshold="0.0">
                <pipeline>
                   <stages>
-                     <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" settle-first="true" count="1"/>
+                     <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="1" enabled="true" diameter="250"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2Gray"/>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.Threshold" name="3" enabled="true" threshold="15" auto="false" invert="false"/>
@@ -582,144 +864,38 @@
                <offset-threshold-length value="0.5" units="Millimeters"/>
                <calibration-Z-offset value="0.0" units="Millimeters"/>
             </calibration>
+            <method-part-on>None</method-part-on>
+            <part-on-check-after-pick>true</part-on-check-after-pick>
+            <part-on-check-align>true</part-on-check-align>
+            <part-on-check-before-place>true</part-on-check-before-place>
             <vacuum-level-part-on-low>0.0</vacuum-level-part-on-low>
             <vacuum-level-part-on-high>0.0</vacuum-level-part-on-high>
+            <vacuum-difference-part-on-low>0.0</vacuum-difference-part-on-low>
+            <vacuum-difference-part-on-high>0.0</vacuum-difference-part-on-high>
+            <method-part-off>None</method-part-off>
+            <part-off-check-after-place>true</part-off-check-after-place>
+            <part-off-check-before-pick>true</part-off-check-before-pick>
             <vacuum-level-part-off-low>0.0</vacuum-level-part-off-low>
             <vacuum-level-part-off-high>0.0</vacuum-level-part-off-high>
+            <vacuum-difference-part-off-low>0.0</vacuum-difference-part-off-low>
+            <vacuum-difference-part-off-high>0.0</vacuum-difference-part-off-high>
             <diameter-low value="0.0" units="Millimeters"/>
          </nozzle-tip>
       </nozzle-tips>
-      <driver class="org.openpnp.machine.reference.driver.GcodeDriver" communications="serial" connection-keep-alive="true" units="Millimeters" max-feed-rate="1000" backlash-offset-x="-0.3" backlash-offset-y="-0.3" non-squareness-factor="0.0" backlash-feed-rate-factor="0.1" timeout-milliseconds="5000" connect-wait-time-milliseconds="1000" visual-homing-enabled="false" backslash-escaped-characters-enabled="false" name="GcodeDriver">
-         <serial line-ending-type="LF" port-name="COM11" baud="115200" flow-control="Off" data-bits="Eight" stop-bits="One" parity="None" set-dtr="false" set-rts="false" name="SerialPortCommunications"/>
-         <tcp line-ending-type="LF" ip-address="127.0.0.1" port="23" name="TcpCommunications"/>
-         <homing-fiducial-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-         <command type="DISABLE_COMMAND">
-            <text><![CDATA[M9 M5]]></text>
-         </command>
-         <command type="ENABLE_COMMAND">
-            <text><![CDATA[G21 M9]]></text>
-         </command>
-         <command type="CONNECT_COMMAND">
-            <text><![CDATA[$SV=2]]></text>
-            <text><![CDATA[$ME ]]></text>
-            <text><![CDATA[$1pm=2]]></text>
-            <text><![CDATA[$2pm=2]]></text>
-            <text><![CDATA[$3pm=2]]></text>
-            <text><![CDATA[$4pm=2]]></text>
-            <text><![CDATA[G21 G90 G92 X0 Y0 Z0 A0 M8 M5]]></text>
-            <text><![CDATA[$xjm=2000]]></text>
-            <text><![CDATA[$xvm=8000]]></text>
-            <text><![CDATA[$xsv=2000]]></text>
-            <text><![CDATA[$xsn=3]]></text>
-            <text><![CDATA[$xjh=2000]]></text>
-            <text><![CDATA[$xsx=2]]></text>
-            <text><![CDATA[$1mi=8]]></text>
-            <text><![CDATA[$1sa=0.900]]></text>
-            <text><![CDATA[$1tr=39.8930]]></text>
-            <text><![CDATA[$yjm=2000]]></text>
-            <text><![CDATA[$yvm=8000]]></text>
-            <text><![CDATA[$ysn=3]]></text>
-            <text><![CDATA[$ysx=2]]></text>
-            <text><![CDATA[$yjh=2000]]></text>
-            <text><![CDATA[$ysv=1800]]></text>
-            <text><![CDATA[$2mi=8]]></text>
-            <text><![CDATA[$2sa=0.900]]></text>
-            <text><![CDATA[$2tr=39.9750]]></text>
-            <text><![CDATA[$zjm=2300]]></text>
-            <text><![CDATA[$zvm=3000]]></text>
-            <text><![CDATA[$ztm=60]]></text>
-            <text><![CDATA[$zjh=2000]]></text>
-            <text><![CDATA[$zsv=1500]]></text>
-            <text><![CDATA[$xfr=8000]]></text>
-            <text><![CDATA[$xtm=650]]></text>
-            <text><![CDATA[$yfr=8000]]></text>
-            <text><![CDATA[$ytm=400]]></text>
-            <text><![CDATA[$zfr=3000]]></text>
-            <text><![CDATA[$afr=20000]]></text>
-            <text><![CDATA[$3mi=8]]></text>
-            <text><![CDATA[$3sa=1.800]]></text>
-            <text><![CDATA[$3tr=8.0000]]></text>
-            <text><![CDATA[$ajm=600]]></text>
-            <text><![CDATA[$avm=20000]]></text>
-            <text><![CDATA[$4mi=8]]></text>
-            <text><![CDATA[$4sa=0.900]]></text>
-            <text><![CDATA[$4tr=160.0000]]></text>
-            <text><![CDATA[$aam=1]]></text>
-            <text><![CDATA[$mt=300.00]]></text>
-            <text><![CDATA[$zzb=2]]></text>
-            <text><![CDATA[$3po=1]]></text>
-            <text><![CDATA[$zsx=3]]></text>
-            <text><![CDATA[$zsn=0]]></text>
-         </command>
-         <command type="HOME_COMMAND">
-            <text><![CDATA[G28.2 X0 Y0 Z0 A0 ]]></text>
-            <text><![CDATA[G92 X0 Y0 Z0]]></text>
-         </command>
-         <command type="COMMAND_CONFIRM_REGEX">
-            <text><![CDATA[.*ok>.*]]></text>
-         </command>
-         <command type="MOVE_TO_COMPLETE_REGEX">
-            <text><![CDATA[.*stat:3.*]]></text>
-         </command>
-         <command type="PICK_COMMAND">
-            <text><![CDATA[M8]]></text>
-            <text><![CDATA[G4 P0.5]]></text>
-         </command>
-         <command type="PLACE_COMMAND">
-            <text><![CDATA[M9]]></text>
-            <text><![CDATA[G4 P0.5]]></text>
-         </command>
-         <command type="PUMP_ON_COMMAND">
-            <text><![CDATA[M4]]></text>
-         </command>
-         <command type="PUMP_OFF_COMMAND">
-            <text><![CDATA[M5]]></text>
-         </command>
-         <command type="MOVE_TO_COMMAND">
-            <text><![CDATA[G0 {X:X%.4f} {Y:Y%.4f} {Z:Z%.4f} {Rotation:A%.4f} F{FeedRate:%.0f}]]></text>
-         </command>
-         <command head-mountable-id="ACT1580115049383" type="ACTUATE_BOOLEAN_COMMAND">
-            <text><![CDATA[{True:M4}]]></text>
-            <text><![CDATA[{False:M5}]]></text>
-         </command>
-         <command head-mountable-id="ACT1580115882023" type="ACTUATE_BOOLEAN_COMMAND">
-            <text><![CDATA[{True:M8}]]></text>
-            <text><![CDATA[{False:M9}]]></text>
-         </command>
-         <sub-drivers class="java.util.ArrayList"/>
-         <axes class="java.util.ArrayList">
-            <axis name="x" type="X" home-coordinate="0.0">
-               <head-mountable-ids class="java.util.HashSet">
-                  <string>*</string>
-               </head-mountable-ids>
-            </axis>
-            <axis name="y" type="Y" home-coordinate="0.0">
-               <head-mountable-ids class="java.util.HashSet">
-                  <string>*</string>
-               </head-mountable-ids>
-            </axis>
-            <axis name="z" type="Z" home-coordinate="0.0">
-               <head-mountable-ids class="java.util.HashSet">
-                  <string>N1</string>
-               </head-mountable-ids>
-            </axis>
-            <axis name="rotation" type="Rotation" home-coordinate="0.0">
-               <head-mountable-ids class="java.util.HashSet">
-                  <string>*</string>
-               </head-mountable-ids>
-            </axis>
-         </axes>
-      </driver>
-      <pnp-job-processor class="org.openpnp.machine.reference.ReferencePnpJobProcessor" job-order="PartHeight">
+      <pnp-job-processor class="org.openpnp.machine.reference.ReferencePnpJobProcessor" job-order="PartHeight" max-vision-retries="3">
          <planner class="org.openpnp.machine.reference.ReferencePnpJobProcessor$SimplePnpJobPlanner"/>
       </pnp-job-processor>
       <fiducial-locator class="org.openpnp.machine.reference.vision.ReferenceFiducialLocator" enabled-averaging="false" repeat-fiducial-recognition="3">
          <pipeline>
             <stages>
-               <cv-stage class="org.openpnp.vision.pipeline.stages.CreateFootprintTemplateImage" name="template" enabled="true"/>
+               <cv-stage class="org.openpnp.vision.pipeline.stages.CreateFootprintTemplateImage" name="template" enabled="true" footprint-view="Fiducial" minimal-image-size="false">
+                  <pads-color r="255" g="255" b="255" a="255"/>
+                  <body-color r="0" g="0" b="0" a="255"/>
+                  <background-color r="0" g="0" b="0" a="255"/>
+               </cv-stage>
                <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_template" enabled="true" prefix="fidloc_template_" suffix=".png"/>
                <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="template_gray" enabled="true" conversion="Bgr2Gray"/>
-               <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="image" enabled="true" settle-first="true" count="1"/>
+               <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="image" enabled="true" default-light="true" settle-first="true" count="1"/>
                <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="image_gray" enabled="true" conversion="Bgr2Gray"/>
                <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_original" enabled="true" prefix="fidloc_original_" suffix=".png"/>
                <cv-stage class="org.openpnp.vision.pipeline.stages.MatchTemplate" name="match_template" enabled="true" template-stage-name="template_gray" threshold="0.699999988079071" corr="0.8500000238418579" normalize="true"/>
@@ -730,8 +906,198 @@
                <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_results" enabled="true" prefix="fidloc_results_" suffix=".png"/>
             </stages>
          </pipeline>
-         <part-settings-by-part-id class="java.util.HashMap"/>
+         <part-settings-by-part-id class="java.util.HashMap">
+            <entry>
+               <string>R0805-1K</string>
+               <part-settings enabled="false">
+                  <pipeline>
+                     <stages>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.CreateFootprintTemplateImage" name="template" enabled="true" footprint-view="Fiducial" minimal-image-size="false">
+                           <pads-color r="255" g="255" b="255" a="255"/>
+                           <body-color r="0" g="0" b="0" a="255"/>
+                           <background-color r="0" g="0" b="0" a="255"/>
+                        </cv-stage>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_template" enabled="true" prefix="fidloc_template_" suffix=".png"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="template_gray" enabled="true" conversion="Bgr2Gray"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="image" enabled="true" default-light="true" settle-first="true" count="1"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="image_gray" enabled="true" conversion="Bgr2Gray"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_original" enabled="true" prefix="fidloc_original_" suffix=".png"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.MatchTemplate" name="match_template" enabled="true" template-stage-name="template_gray" threshold="0.699999988079071" corr="0.8500000238418579" normalize="true"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="recall_image" enabled="true" image-stage-name="image"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.DrawTemplateMatches" name="draw_matches" enabled="true" template-matches-stage-name="match_template"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertModelToKeyPoints" name="results" enabled="true" model-stage-name="match_template"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.DrawKeyPoints" name="draw_keypoints" enabled="true" key-points-stage-name="results"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_results" enabled="true" prefix="fidloc_results_" suffix=".png"/>
+                     </stages>
+                  </pipeline>
+               </part-settings>
+            </entry>
+            <entry>
+               <string>R0603-1K</string>
+               <part-settings enabled="false">
+                  <pipeline>
+                     <stages>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.CreateFootprintTemplateImage" name="template" enabled="true" footprint-view="Fiducial" minimal-image-size="false">
+                           <pads-color r="255" g="255" b="255" a="255"/>
+                           <body-color r="0" g="0" b="0" a="255"/>
+                           <background-color r="0" g="0" b="0" a="255"/>
+                        </cv-stage>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_template" enabled="true" prefix="fidloc_template_" suffix=".png"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="template_gray" enabled="true" conversion="Bgr2Gray"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="image" enabled="true" default-light="true" settle-first="true" count="1"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="image_gray" enabled="true" conversion="Bgr2Gray"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_original" enabled="true" prefix="fidloc_original_" suffix=".png"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.MatchTemplate" name="match_template" enabled="true" template-stage-name="template_gray" threshold="0.699999988079071" corr="0.8500000238418579" normalize="true"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="recall_image" enabled="true" image-stage-name="image"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.DrawTemplateMatches" name="draw_matches" enabled="true" template-matches-stage-name="match_template"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertModelToKeyPoints" name="results" enabled="true" model-stage-name="match_template"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.DrawKeyPoints" name="draw_keypoints" enabled="true" key-points-stage-name="results"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_results" enabled="true" prefix="fidloc_results_" suffix=".png"/>
+                     </stages>
+                  </pipeline>
+               </part-settings>
+            </entry>
+            <entry>
+               <string>FIDUCIAL-HOME</string>
+               <part-settings enabled="false">
+                  <pipeline>
+                     <stages>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.CreateFootprintTemplateImage" name="template" enabled="true" footprint-view="Fiducial" minimal-image-size="false">
+                           <pads-color r="255" g="255" b="255" a="255"/>
+                           <body-color r="0" g="0" b="0" a="255"/>
+                           <background-color r="0" g="0" b="0" a="255"/>
+                        </cv-stage>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_template" enabled="true" prefix="fidloc_template_" suffix=".png"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="template_gray" enabled="true" conversion="Bgr2Gray"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="image" enabled="true" default-light="true" settle-first="true" count="1"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="image_gray" enabled="true" conversion="Bgr2Gray"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_original" enabled="true" prefix="fidloc_original_" suffix=".png"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.MatchTemplate" name="match_template" enabled="true" template-stage-name="template_gray" threshold="0.699999988079071" corr="0.8500000238418579" normalize="true"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="recall_image" enabled="true" image-stage-name="image"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.DrawTemplateMatches" name="draw_matches" enabled="true" template-matches-stage-name="match_template"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertModelToKeyPoints" name="results" enabled="true" model-stage-name="match_template"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.DrawKeyPoints" name="draw_keypoints" enabled="true" key-points-stage-name="results"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_results" enabled="true" prefix="fidloc_results_" suffix=".png"/>
+                     </stages>
+                  </pipeline>
+               </part-settings>
+            </entry>
+            <entry>
+               <string>R0201-1K</string>
+               <part-settings enabled="false">
+                  <pipeline>
+                     <stages>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.CreateFootprintTemplateImage" name="template" enabled="true" footprint-view="Fiducial" minimal-image-size="false">
+                           <pads-color r="255" g="255" b="255" a="255"/>
+                           <body-color r="0" g="0" b="0" a="255"/>
+                           <background-color r="0" g="0" b="0" a="255"/>
+                        </cv-stage>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_template" enabled="true" prefix="fidloc_template_" suffix=".png"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="template_gray" enabled="true" conversion="Bgr2Gray"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="image" enabled="true" default-light="true" settle-first="true" count="1"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="image_gray" enabled="true" conversion="Bgr2Gray"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_original" enabled="true" prefix="fidloc_original_" suffix=".png"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.MatchTemplate" name="match_template" enabled="true" template-stage-name="template_gray" threshold="0.699999988079071" corr="0.8500000238418579" normalize="true"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="recall_image" enabled="true" image-stage-name="image"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.DrawTemplateMatches" name="draw_matches" enabled="true" template-matches-stage-name="match_template"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertModelToKeyPoints" name="results" enabled="true" model-stage-name="match_template"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.DrawKeyPoints" name="draw_keypoints" enabled="true" key-points-stage-name="results"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_results" enabled="true" prefix="fidloc_results_" suffix=".png"/>
+                     </stages>
+                  </pipeline>
+               </part-settings>
+            </entry>
+            <entry>
+               <string>R0402-1K</string>
+               <part-settings enabled="false">
+                  <pipeline>
+                     <stages>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.CreateFootprintTemplateImage" name="template" enabled="true" footprint-view="Fiducial" minimal-image-size="false">
+                           <pads-color r="255" g="255" b="255" a="255"/>
+                           <body-color r="0" g="0" b="0" a="255"/>
+                           <background-color r="0" g="0" b="0" a="255"/>
+                        </cv-stage>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_template" enabled="true" prefix="fidloc_template_" suffix=".png"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="template_gray" enabled="true" conversion="Bgr2Gray"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="image" enabled="true" default-light="true" settle-first="true" count="1"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="image_gray" enabled="true" conversion="Bgr2Gray"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_original" enabled="true" prefix="fidloc_original_" suffix=".png"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.MatchTemplate" name="match_template" enabled="true" template-stage-name="template_gray" threshold="0.699999988079071" corr="0.8500000238418579" normalize="true"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="recall_image" enabled="true" image-stage-name="image"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.DrawTemplateMatches" name="draw_matches" enabled="true" template-matches-stage-name="match_template"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertModelToKeyPoints" name="results" enabled="true" model-stage-name="match_template"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.DrawKeyPoints" name="draw_keypoints" enabled="true" key-points-stage-name="results"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_results" enabled="true" prefix="fidloc_results_" suffix=".png"/>
+                     </stages>
+                  </pipeline>
+               </part-settings>
+            </entry>
+            <entry>
+               <string>FIDUCIAL-1X2-FIDUCIAL1X2</string>
+               <part-settings enabled="false">
+                  <pipeline>
+                     <stages>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.CreateFootprintTemplateImage" name="template" enabled="true" footprint-view="Fiducial" minimal-image-size="false">
+                           <pads-color r="255" g="255" b="255" a="255"/>
+                           <body-color r="0" g="0" b="0" a="255"/>
+                           <background-color r="0" g="0" b="0" a="255"/>
+                        </cv-stage>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_template" enabled="true" prefix="fidloc_template_" suffix=".png"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="template_gray" enabled="true" conversion="Bgr2Gray"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="image" enabled="true" default-light="true" settle-first="true" count="1"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="image_gray" enabled="true" conversion="Bgr2Gray"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_original" enabled="true" prefix="fidloc_original_" suffix=".png"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.MatchTemplate" name="match_template" enabled="true" template-stage-name="template_gray" threshold="0.699999988079071" corr="0.8500000238418579" normalize="true"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="recall_image" enabled="true" image-stage-name="image"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.DrawTemplateMatches" name="draw_matches" enabled="true" template-matches-stage-name="match_template"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertModelToKeyPoints" name="results" enabled="true" model-stage-name="match_template"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.DrawKeyPoints" name="draw_keypoints" enabled="true" key-points-stage-name="results"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_results" enabled="true" prefix="fidloc_results_" suffix=".png"/>
+                     </stages>
+                  </pipeline>
+               </part-settings>
+            </entry>
+            <entry>
+               <string>R0805-RTD</string>
+               <part-settings enabled="false">
+                  <pipeline>
+                     <stages>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.CreateFootprintTemplateImage" name="template" enabled="true" footprint-view="Fiducial" minimal-image-size="false">
+                           <pads-color r="255" g="255" b="255" a="255"/>
+                           <body-color r="0" g="0" b="0" a="255"/>
+                           <background-color r="0" g="0" b="0" a="255"/>
+                        </cv-stage>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_template" enabled="true" prefix="fidloc_template_" suffix=".png"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="template_gray" enabled="true" conversion="Bgr2Gray"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="image" enabled="true" default-light="true" settle-first="true" count="1"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="image_gray" enabled="true" conversion="Bgr2Gray"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_original" enabled="true" prefix="fidloc_original_" suffix=".png"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.MatchTemplate" name="match_template" enabled="true" template-stage-name="template_gray" threshold="0.699999988079071" corr="0.8500000238418579" normalize="true"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="recall_image" enabled="true" image-stage-name="image"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.DrawTemplateMatches" name="draw_matches" enabled="true" template-matches-stage-name="match_template"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertModelToKeyPoints" name="results" enabled="true" model-stage-name="match_template"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.DrawKeyPoints" name="draw_keypoints" enabled="true" key-points-stage-name="results"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_results" enabled="true" prefix="fidloc_results_" suffix=".png"/>
+                     </stages>
+                  </pipeline>
+               </part-settings>
+            </entry>
+         </part-settings-by-part-id>
+         <tolerances>
+            <scaling-tolerance>0.05</scaling-tolerance>
+            <shearing-tolerance>0.05</shearing-tolerance>
+            <board-location-tolerance value="5.0" units="Millimeters"/>
+         </tolerances>
       </fiducial-locator>
+      <motion-planner class="org.openpnp.machine.reference.driver.ReferenceAdvancedMotionPlanner" maximum-plan-history="60.0" allow-continuous-motion="true" allow-uncoordinated="false" diagnostics-enabled="false" interpolation-retiming="true" show-approximation="true" to-mid-1-speed="1.0" to-mid-2-speed="1.0" to-end-speed="1.0" start-location-enabled="true" mid-1-location-enabled="true" mid-2-location-enabled="true" end-location-enabled="true" to-mid-1-safe-z="true" to-mid-2-safe-z="true" to-end-safe-z="true">
+         <start-location units="Millimeters" x="20.0" y="20.0" z="0.0" rotation="0.0"/>
+         <mid-location-1 units="Millimeters" x="400.0" y="280.0" z="0.0" rotation="0.0"/>
+         <mid-location-2 units="Millimeters" x="20.0" y="20.0" z="0.0" rotation="0.0"/>
+         <end-location units="Millimeters" x="100.0" y="100.0" z="0.0" rotation="0.0"/>
+      </motion-planner>
       <home-after-enabled>false</home-after-enabled>
+      <solutions target-milestone="Advanced">
+         <dismissed-solutions class="java.util.HashSet"/>
+      </solutions>
    </machine>
 </openpnp-machine>

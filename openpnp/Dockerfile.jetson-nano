@@ -36,6 +36,9 @@ RUN dpkg -i *.deb && rm *.deb
 
 # Introduce the right openpnp-capture jar, the one that has arch-specific binaries for this target (aarch64)
 RUN wget https://github.com/brainstorm/openpnp-capture-java/releases/download/v0.0.23/openpnp-capture-java-0.0.23.jar -O /opt/openpnp/lib/openpnp-capture-java-0.0.22.jar
+# And the JNI system level hack
+# Also read https://stackoverflow.com/questions/52500488/cant-obtain-static-method-fromnativemethod-object-from-class-com-sun-jna-nat
+RUN ln -sf /usr/lib/aarch64-linux-gnu/libjnidispatch.system.so /usr/lib/aarch64-linux-gnu/libjnidispatch.so && apt-get install libjna-platform-java
 
 # Prepare to start the kiosk
 RUN wget https://raw.githubusercontent.com/cchs-melbourne/openpnp-kiosk/master/start.sh && chmod -x start.sh

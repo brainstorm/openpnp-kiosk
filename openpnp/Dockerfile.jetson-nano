@@ -35,7 +35,10 @@ ENV JAVA_HOME /usr/lib/jvm/java-11-amazon-corretto
 RUN dpkg -i *.deb && rm *.deb
 
 # Introduce the right openpnp-capture jar, the one that has arch-specific binaries for this target (aarch64)
-RUN wget https://github.com/brainstorm/openpnp-capture-java/releases/download/v0.0.23/openpnp-capture-java-0.0.23.jar -O /opt/openpnp/lib/openpnp-capture-java-0.0.22.jar
+RUN wget
+https://github.com/brainstorm/openpnp-capture-java/releases/download/v0.0.23/openpnp-capture-java-0.0.23.jar
+-O /opt/openpnp/lib/openpnp-capture-java-0.0.23.jar
+
 # And the JNI system level hack
 # Also read https://stackoverflow.com/questions/52500488/cant-obtain-static-method-fromnativemethod-object-from-class-com-sun-jna-nat
 RUN ln -sf /usr/lib/aarch64-linux-gnu/jni/libjnidispatch.system.so /usr/lib/aarch64-linux-gnu/jni/libjnidispatch.so

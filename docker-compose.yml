@@ -10,7 +10,11 @@ services:
       io.balena.features.sysfs: '1'
       io.balena.features.firmware: '1'
       io.balena.features.dbus: '1'
-    devices:
+    volumes:
        - /dev/ttyUSB0:/dev/ttyUSB0
        - /dev/ttyUSB1:/dev/ttyUSB1
        - /dev/ttyUSB2:/dev/ttyUSB2
+#    devices:
+#       - /dev/ttyUSB0:/dev/ttyUSB0
+#       - /dev/ttyUSB1:/dev/ttyUSB1
+#       - /dev/ttyUSB2:/dev/ttyUSB2

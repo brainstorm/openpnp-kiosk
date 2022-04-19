@@ -52,10 +52,10 @@ RUN wget https://raw.githubusercontent.com/CCHS-Melbourne/openpnp-kiosk/master/c
     wget https://raw.githubusercontent.com/CCHS-Melbourne/openpnp-kiosk/master/config/packages.xml && \
     wget https://raw.githubusercontent.com/CCHS-Melbourne/openpnp-kiosk/master/config/udev-dockerfriendly.sh -O /etc/init.d/udev && \
     mkdir -p /root/.icewm && wget https://raw.githubusercontent.com/CCHS-Melbourne/openpnp-kiosk/master/config/icewm-autostart.sh -O /root/.icewm/startup && \
-    chmod +x /root/.icewm/startup && \
-    ln -sf /root/machine.xml /root/.openpnp/machine.xml && \
-    ln -sf /root/packages.xml /root/.openpnp/packages.xml && \
-    ln -sf /root/parts.xml /root/.openpnp/parts.xml
+    chmod +x /root/.icewm/startup && mkdir -p /root/.openpnp2 && \
+    ln -sf machine.xml /root/.openpnp2/machine.xml && \
+    ln -sf packages.xml /root/.openpnp2/packages.xml && \
+    ln -sf parts.xml /root/.openpnp2/parts.xml
 
 # Add OpenPnP .desktop file on its appropriate system-wide location (should be handled by the .deb package eventually)
 # https://www.xmodulo.com/create-desktop-shortcut-launcher-linux.html

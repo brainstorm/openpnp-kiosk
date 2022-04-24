@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 # Display on Balena's env results in wrong host:number, using DISPLAY
 # locally instead
@@ -24,7 +24,7 @@ x11_and_usb() {
 	fi
 
 	echo "Starting X"
-	startx &
+	startx
 }
 
 

@@ -60,3 +60,10 @@ no_vnc() {
 # Start the X and connect them to the web!
 x11_and_usb
 no_vnc
+
+while :
+do
+	echo "just waiting over here while you debug! Otherwise the
+	app/docker container will keep re-spawning impossibly :-!"
+	sleep 30
+done

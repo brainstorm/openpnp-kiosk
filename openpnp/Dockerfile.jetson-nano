@@ -7,8 +7,8 @@ ENV UDEV=1
 # Install desktop environment...
 RUN apt-get update
 RUN apt-get install -qq -y wget curl git \
-					 xserver-xorg-core xserver-xorg-input-all xinit xauth dbus-x11 usbutils \
-					 icewm xterm firefox
+                           xserver-xorg-core xserver-xorg-input-all xinit xauth dbus-x11 usbutils \
+                           icewm xterm firefox novnc
 
 # ...and required openpnp deps
 RUN apt-get install -qq -y maven ant \
@@ -53,13 +53,27 @@ RUN wget https://raw.githubusercontent.com/CCHS-Melbourne/openpnp-kiosk/master/c
     wget https://raw.githubusercontent.com/CCHS-Melbourne/openpnp-kiosk/master/config/udev-dockerfriendly.sh -O /etc/init.d/udev && \
     mkdir -p /root/.icewm && wget https://raw.githubusercontent.com/CCHS-Melbourne/openpnp-kiosk/master/config/icewm-autostart.sh -O /root/.icewm/startup && \
     chmod +x /root/.icewm/startup && mkdir -p /root/.openpnp2 && \
-    ln -sf machine.xml /root/.openpnp2/machine.xml && \
-    ln -sf packages.xml /root/.openpnp2/packages.xml && \
-    ln -sf parts.xml /root/.openpnp2/parts.xml
+    ln -sf /usr/src/app/machine.xml /root/.openpnp2/machine.xml && \
+    ln -sf /usr/src/app/packages.xml /root/.openpnp2/packages.xml && \
+    ln -sf /usr/src/app/parts.xml /root/.openpnp2/parts.xml
 
 # Add OpenPnP .desktop file on its appropriate system-wide location (should be handled by the .deb package eventually)
 # https://www.xmodulo.com/create-desktop-shortcut-launcher-linux.html
 RUN cp -a /opt/openpnp/OpenPnP.desktop /usr/share/applications
 
+
+# Setup remove (no)VNC sessions, because we don't need to occupy USB ports
+# with physical keybaords and mouse :)
+RUN ln -s /usr/share/novnc/vnc.html /usr/share/novnc/index.html
+
+ENV DISPLAY=:0 \
+    VNC_PORT=5900 \
+    WEB_PORT=9090
+    #VIEW_ONLY
+    #ACCESS_PASSWORD
+    #VIEW_PASSWORD
+    #DISABLE_PASSWORDS
+
+EXPOSE 9090
 
 CMD ["bash", "start.sh"]

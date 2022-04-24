@@ -5,10 +5,10 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV UDEV=1
 
 # Install desktop environment...
-RUN apt-get update
+RUN apt-get update -y
 RUN apt-get install -qq -y wget curl git \
                            xserver-xorg-core xserver-xorg-input-all xinit xauth dbus-x11 usbutils \
-                           icewm xterm firefox
+                           icewm xterm firefox novnc x11vnc
 
 # ...and required openpnp deps
 RUN apt-get install -qq -y maven ant \

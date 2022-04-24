@@ -8,7 +8,7 @@ ENV UDEV=1
 RUN apt-get update
 RUN apt-get install -qq -y wget curl git \
                            xserver-xorg-core xserver-xorg-input-all xinit xauth dbus-x11 usbutils \
-                           icewm xterm firefox novnc
+                           icewm xterm firefox
 
 # ...and required openpnp deps
 RUN apt-get install -qq -y maven ant \
@@ -55,7 +55,8 @@ RUN wget https://raw.githubusercontent.com/CCHS-Melbourne/openpnp-kiosk/master/c
     chmod +x /root/.icewm/startup && mkdir -p /root/.openpnp2 && \
     ln -sf /usr/src/app/machine.xml /root/.openpnp2/machine.xml && \
     ln -sf /usr/src/app/packages.xml /root/.openpnp2/packages.xml && \
-    ln -sf /usr/src/app/parts.xml /root/.openpnp2/parts.xml
+    ln -sf /usr/src/app/parts.xml /root/.openpnp2/parts.xml && \
+    wget https://raw.githubusercontent.com/CCHS-Melbourne/Graphics/master/Wallpaper/CCHS%20Wallpaper%20-%20Yellow%201280x800%2001.png -O /usr/src/app/cchs_wallpaper.png
 
 # Add OpenPnP .desktop file on its appropriate system-wide location (should be handled by the .deb package eventually)
 # https://www.xmodulo.com/create-desktop-shortcut-launcher-linux.html

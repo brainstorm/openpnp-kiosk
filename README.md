@@ -29,7 +29,7 @@ balena push --dockerfile Dockerfile.jetson.nano
 Alternatively, you can just install the software on the RPi itself running the commands found in the Dockerfile itself, no cloud nor docker involved ;)
 
 ![rpi3openpnp](img/rpi3_embedded_display.jpg)
-![rpi3openpnpbigmon](img/first-raspberrypi3-success.png)
+![noiopenpnp](img/noi_openpnp.jpg)
 
 [gcloud_iot]: https://cloud.google.com/solutions/iot
 [aws_greengrass]: https://aws.amazon.com/greengrass/

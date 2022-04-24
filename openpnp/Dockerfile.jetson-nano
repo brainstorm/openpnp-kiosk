@@ -70,14 +70,7 @@ RUN cp -a /opt/openpnp/OpenPnP.desktop /usr/share/applications
 # with physical keybaords and mouse :)
 RUN ln -s /usr/share/novnc/vnc.html /usr/share/novnc/index.html
 
-ENV DISPLAY=:0 \
-    VNC_PORT=5900 \
-    WEB_PORT=9090
-    #VIEW_ONLY
-    #ACCESS_PASSWORD
-    #VIEW_PASSWORD
-    #DISABLE_PASSWORDS
-
+# NoVNC port
 EXPOSE 9090
 
 CMD ["bash", "start.sh"]

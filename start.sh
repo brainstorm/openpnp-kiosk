@@ -49,14 +49,16 @@ no_vnc() {
 	  -alwaysshared \
 	  -bg \
 	  -forever \
+	  -ncache 10
 	  -quiet \
-	  $VNC_PASS
+	  -geometry 1024x768
+	  "$VNC_PASS"
 
 	echo "\n#"
 	echo "# Starting novnc"
 	echo "#\n"
 
-	exec websockify --web /usr/share/novnc $VNC_WEB_PORT localhost:$VNC_PORT
+	websockify --web /usr/share/novnc $VNC_WEB_PORT localhost:$VNC_PORT &
 }
 
 

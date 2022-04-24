@@ -58,7 +58,7 @@ no_vnc() {
 	echo "# Starting novnc"
 	echo "#\n"
 
-	websockify --web /usr/share/novnc $VNC_WEB_PORT localhost:$VNC_PORT &
+	exec websockify --web /usr/share/novnc $VNC_WEB_PORT localhost:$VNC_PORT
 }
 
 

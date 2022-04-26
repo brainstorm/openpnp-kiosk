@@ -2,7 +2,7 @@
 
 # Display on Balena's env results in wrong host:number, using DISPLAY
 # locally instead
-export DISPLAY=:0
+export DISPLAY=":0"
 
 # Makes sure the usb devices work between the host and docker container
 # That is USB mouse, keyboard, cameras, control board(s), etc...

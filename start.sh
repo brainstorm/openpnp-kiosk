@@ -64,7 +64,7 @@ no_vnc() {
 
 # Start the X and connect them to the web!
 x11_and_usb
-no_vnc
+#no_vnc
 
 while :
 do

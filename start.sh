@@ -2,7 +2,6 @@
 
 # Display on Balena's env results in wrong host:number, using DISPLAY
 # locally instead
-export DISPLAY=":0"
 
 # Makes sure the usb devices work between the host and docker container
 # That is USB mouse, keyboard, cameras, control board(s), etc...
@@ -11,6 +10,7 @@ export DISPLAY=":0"
 function x11_and_usb {
 	rm /tmp/.X0-lock &>/dev/null || true
 
+	export DISPLAY=:0
 	export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 	export UDEV=1
 
@@ -41,7 +41,6 @@ function no_vnc {
 	#Xvfb :0 -screen 0 1280x720x24
 
 	x11vnc \
-	  -display $DISPLAY \
 	  -listen "localhost" \
 	  # -noshm \
 	  -no6 \

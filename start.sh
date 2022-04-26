@@ -8,7 +8,7 @@ export DISPLAY=":0"
 # That is USB mouse, keyboard, cameras, control board(s), etc...
 # 
 # Also launches x11
-x11_and_usb() {
+function x11_and_usb {
 	rm /tmp/.X0-lock &>/dev/null || true
 
 	export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
@@ -31,7 +31,7 @@ x11_and_usb() {
 ## Inspired by:
 # https://github.com/nucleardreamer/xserver-web-vnc
 # https://github.com/balena-io-playground/balena-vnc-example
-no_vnc() {
+function no_vnc {
 	echo "\n#"
 	echo "# Starting x11vnc"
 	echo "#"
@@ -42,7 +42,7 @@ no_vnc() {
 
 	x11vnc \
 	  -display $DISPLAY \
-	  -listen localhost \
+	  -listen "localhost" \
 	  # -noshm \
 	  -no6 \
 	  -shared \
@@ -51,7 +51,7 @@ no_vnc() {
 	  -forever \
 	  -ncache 10
 	  -quiet \
-	  -geometry 1024x768
+	  -geometry "1024x768" \
 	  "$VNC_PASS"
 
 	echo "\n#"

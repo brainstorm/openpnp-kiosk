@@ -3,6 +3,10 @@
 # Display on Balena's env results in wrong host:number, using DISPLAY
 # locally instead
 
+function set_hostname {
+	echo "pnp.local" > /etc/hostname
+}
+
 # Makes sure the usb devices work between the host and docker container
 # That is USB mouse, keyboard, cameras, control board(s), etc...
 # 
@@ -62,6 +66,7 @@ function no_vnc {
 
 
 # Start the X and connect them to the web!
+set_hostname
 x11_and_usb
 no_vnc
 

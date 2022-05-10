@@ -14,7 +14,6 @@ function set_hostname {
 function x11_and_usb {
 	rm /tmp/.X0-lock &>/dev/null || true
 
-	export DISPLAY=:0
 	export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 	export UDEV=1
 
@@ -46,16 +45,15 @@ function no_vnc {
 
 	x11vnc \
 	  -listen "localhost" \
-	  # -noshm \
 	  -no6 \
 	  -shared \
 	  -alwaysshared \
 	  -bg \
 	  -forever \
-	  -ncache 10
+	  -ncache 10 \
 	  -quiet \
 	  -geometry "1024x768" \
-	  "$VNC_PASS"
+#	  "$VNC_PASS"
 
 	echo "\n#"
 	echo "# Starting novnc"

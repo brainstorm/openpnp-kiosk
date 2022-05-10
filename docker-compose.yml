@@ -16,9 +16,9 @@ services:
        - /dev/ttyUSB2:/dev/ttyUSB2
        - /dev/bus/usb:/dev/bus/usb
        - /dev/dri
-    ports:
-       - 5900:5900
-       - 9090:9090
+    expose:
+       - 5900
+       - 9090
     group_add:
       - video
     environment:

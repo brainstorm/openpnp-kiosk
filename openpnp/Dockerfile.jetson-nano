@@ -39,11 +39,11 @@ ENV JAVA_HOME /usr/lib/jvm/java-11-amazon-corretto
 RUN dpkg -i *.deb && rm *.deb
 
 # Introduce the right openpnp-capture jar, the one that has arch-specific binaries for this target (aarch64)
-RUN wget https://github.com/brainstorm/openpnp-capture-java/releases/download/v0.0.23/openpnp-capture-java-0.0.23.jar -O /opt/openpnp/lib/openpnp-capture-java-0.0.23.jar
+#RUN wget https://github.com/openpnp/openpnp-capture-java/releases/download/v0.0.26-1/openpnp-capture-java-0.0.26-1.jar -O /opt/openpnp/lib/openpnp-capture-java-0.0.26-1.jar
 
 # And the JNI system level hack
 # Also read https://stackoverflow.com/questions/52500488/cant-obtain-static-method-fromnativemethod-object-from-class-com-sun-jna-nat
-RUN ln -sf /usr/lib/aarch64-linux-gnu/jni/libjnidispatch.system.so /usr/lib/aarch64-linux-gnu/jni/libjnidispatch.so
+#RUN ln -sf /usr/lib/aarch64-linux-gnu/jni/libjnidispatch.system.so /usr/lib/aarch64-linux-gnu/jni/libjnidispatch.so
 
 # Prepare to start the kiosk
 RUN wget https://raw.githubusercontent.com/cchs-melbourne/openpnp-kiosk/master/start.sh && chmod -x start.sh
@@ -65,7 +65,6 @@ RUN wget https://raw.githubusercontent.com/CCHS-Melbourne/openpnp-kiosk/master/c
 # Add OpenPnP .desktop file on its appropriate system-wide location (should be handled by the .deb package eventually)
 # https://www.xmodulo.com/create-desktop-shortcut-launcher-linux.html
 RUN cp -a /opt/openpnp/OpenPnP.desktop /usr/share/applications
-
 
 # Setup remove (no)VNC sessions, because we don't need to occupy USB ports
 # with physical keybaords and mouse :)

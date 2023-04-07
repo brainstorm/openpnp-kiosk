@@ -1,4 +1,4 @@
-FROM alwaysai/edgeiq-dev:jetson-latest
+FROM alwaysai/edgeiq:jetson-latest
 
 ENV DEBIAN_FRONTEND noninteractive
 # Mouse/keyboard support
@@ -15,7 +15,8 @@ RUN apt-get install -qq -y maven ant \
                      libjna-jni libjna-java libjna-platform-java libtiff5 libpng16-16 libpng-sixlegs-java libatlas3-base \
                      libgstreamer1.0-0 libgstreamer-plugins-base1.0-dev libgstreamer-gl1.0-0 \
                      libgstreamer-plugins-bad1.0-0 \
-                     libv4l-0 libxvidcore4
+                     libv4l-0 libxvidcore4 \
+                     golang cmake make libx11-dev libxrandr-dev libxtst-dev # Neko deps
 
 RUN echo "#!/bin/bash" > /etc/X11/xinit/xserverrc \
   && echo "" >> /etc/X11/xinit/xserverrc \
@@ -33,10 +34,11 @@ RUN wget https://s3-us-west-2.amazonaws.com/openpnp/OpenPnP-linux-test.deb
 
 # Download Corretto, since OpenJDK seems to be only available as JRE in Debian bullseye for ARM64
 RUN wget https://corretto.aws/downloads/latest/amazon-corretto-11-aarch64-linux-jdk.deb
+# RUN wget https://corretto.aws/downloads/latest/amazon-corretto-20-aarch64-linux-jdk.deb # Supported?
 ENV JAVA_HOME /usr/lib/jvm/java-11-amazon-corretto
 
-# Install Java and OpenPnP
-RUN dpkg -i *.deb && rm *.deb
+# Install Java, OpenPnP and cleanup
+RUN dpkg -i *.deb && rm *.deb && apt-get clean -y && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 # Introduce the right openpnp-capture jar, the one that has arch-specific binaries for this target (aarch64)
 #RUN wget https://github.com/openpnp/openpnp-capture-java/releases/download/v0.0.26-1/openpnp-capture-java-0.0.26-1.jar -O /opt/openpnp/lib/openpnp-capture-java-0.0.26-1.jar
@@ -68,10 +70,11 @@ RUN cp -a /opt/openpnp/OpenPnP.desktop /usr/share/applications
 
 # Setup remove (no)VNC sessions, because we don't need to occupy USB ports
 # with physical keybaords and mouse :)
-RUN ln -s /usr/share/novnc/vnc.html /usr/share/novnc/index.html
+#RUN ln -s /usr/share/novnc/vnc.html /usr/share/novnc/index.html
+
 
 # VNC and NoVNC ports
-EXPOSE 9090
-EXPOSE 5900
+#EXPOSE 9090
+#EXPOSE 5900
 
 CMD ["bash", "start.sh"]

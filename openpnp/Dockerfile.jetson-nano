@@ -1,4 +1,5 @@
-FROM ghcr.io/m1k1o/neko/nvidia-brave:latest
+FROM ghcr.io/m1k1o/neko/arm-xfce:latest
+#FROM ghcr.io/m1k1o/neko/nvidia-brave:latest
 #FROM alwaysai/edgeiq:jetson-latest
 
 ENV DEBIAN_FRONTEND noninteractive
